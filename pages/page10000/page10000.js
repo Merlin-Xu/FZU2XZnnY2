@@ -328,6 +328,7 @@ var pageData = {
     wx.navigateTo({
       url: '../page10003/page10003'
     });
+    },
   registerScan: function(e){
     wx.scanCode({
       onlyFromCamera: true,
