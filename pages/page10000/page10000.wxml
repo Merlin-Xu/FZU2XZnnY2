@@ -36,7 +36,7 @@
         </block>
       </view>
       <!-- 绑定会员卡 -->
-      <view class="ele-container" >
+      <view class="ele-container" bindtap='bindExistingScan'>
         <block>
            <template is="zcPicture" data="{{data:data.content[1], detail_data: detail_data}}"></template>  
            <template is="zcText" data="{{data:data.content[7], detail_data: detail_data}}"></template> 
