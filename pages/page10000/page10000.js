@@ -324,5 +324,15 @@ var pageData = {
   bindSearchTextChange: function (e) {
     this.keywordList[e.currentTarget.dataset.compid] = e.detail.value;
   },
+  registerScan: function(e){
+    wx.scanCode({
+      onlyFromCamera: true,
+      success: (res) => {
+        wx.navigateTo({
+          url: '../page10002?scanCode=res',
+        })
+      }
+    })
+  }
 };
 Page(pageData);
