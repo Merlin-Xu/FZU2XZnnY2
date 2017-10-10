@@ -44,7 +44,7 @@
         </block>
       </view>
       <!-- 注册新会员 -->
-      <view class="ele-container" bindtap="bindViewTap">
+      <view class="ele-container" bindtap='registerScan'>
         <block>
            <template is="zcPicture" data="{{data:data.content[2], detail_data: detail_data}}"></template> 
            <template is="zcPicture" data="{{data:data.content[12], detail_data: detail_data}}"></template>

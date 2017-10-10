@@ -324,15 +324,20 @@ var pageData = {
   bindSearchTextChange: function (e) {
     this.keywordList[e.currentTarget.dataset.compid] = e.detail.value;
   },
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../page10002/page10002'
-    });
-  },
   redirectProfile: function (e) {
     wx.navigateTo({
       url: '../page10003/page10003'
     });
+  registerScan: function(e){
+    wx.scanCode({
+      onlyFromCamera: true,
+      success: (res) => {
+        wx.navigateTo({
+          url: '../page10002?scanCode=res',
+        })
+      }
+    })
+
   }
 };
 Page(pageData);
