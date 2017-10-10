@@ -324,5 +324,15 @@ var pageData = {
   bindSearchTextChange: function (e) {
     this.keywordList[e.currentTarget.dataset.compid] = e.detail.value;
   },
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../page10002/page10002'
+    });
+  },
+  redirectProfile: function (e) {
+    wx.navigateTo({
+      url: '../page10003/page10003'
+    });
+  }
 };
 Page(pageData);
