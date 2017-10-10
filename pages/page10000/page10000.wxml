@@ -54,16 +54,8 @@
       <!-- 我的会员卡 -->
       <view class="ele-container" bindtap="redirectProfile">
         <block>
-           <template is="zcPicture" data="{{data:data.content[3], detail_data: detail_data}}"></template> 
-        </block>
-      </view>
-      <view class="ele-container">
-        <block>
+            <template is="zcPicture" data="{{data:data.content[3], detail_data: detail_data}}"></template>  
            <template is="zcText" data="{{data:data.content[10], detail_data: detail_data}}"></template> 
-        </block>
-      </view>
-      <view class="ele-container">
-        <block>
            <template is="zcPicture" data="{{data:data.content[11], detail_data: detail_data}}"></template> 
         </block>
       </view>

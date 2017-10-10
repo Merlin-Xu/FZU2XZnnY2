@@ -14,7 +14,6 @@
     </view>
     <label class="option-btn bind-new-tel-btn {{ !newPhone || !newCode ? 'disabled' : '' }}" bindtap="bindNewPhone">绑定手机</label>
     <button class="option-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">快速验证</button>
-    <view class="support-tip">即速应用技术支持</view>
   </view>
 </view>
 

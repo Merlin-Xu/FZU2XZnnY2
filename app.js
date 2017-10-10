@@ -397,8 +397,8 @@ App({
   shareAppMessage: function (options) {
     var that = this;
     return {
-      title: options.title || this.getAppTitle() || '即速应用',
-      desc: options.desc || this.getAppDescription() || '即速应用，拖拽生成app，无需编辑代码，一键打包微信小程序',
+      title: options.title || this.getAppTitle() || 'DFS',
+      desc: options.desc || this.getAppDescription() || '',
       path: options.path,
       success: function () {
         that.countUserShareApp();
@@ -4697,7 +4697,7 @@ App({
     siteBaseUrl:'https://xcx.yingyonghao8.com',
     appTitle: 'DFS 小程序',
     appDescription: '我的应用',
-    appLogo: 'http://img.weiye.me/zcimgdir/thumb/t_150716692159d58ac91c6c6.jpg'
+    appLogo: 'http://img.weiye.me/zcimgdir/album/file_59dcb625a6d5d.gif'
   }
 })
 

@@ -18,6 +18,5 @@
     </view>
   </view>
   <view class="transfer-section remark-section"><input placeholder="给对方留言" bindinput="inputRemark" /></view>
-  <view class="support-tip">即速应用提供技术支持</view>
   <button type="primary" disabled="{{ (totalPayment === '' || requesting) ? true : false }}" bindtap="confirmPay">支付 <text style="margin:2px 0 0 5px;">¥ {{ totalPayment }}</text></button>
 </view>
