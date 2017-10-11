@@ -10,8 +10,15 @@ Page({
       appName: 'DFS miniP',
       logoUrl: 'http://cdn.jisuapp.cn/zhichi_frontend/static/invitation/images/logo.png',
       duration: '无限期',
-      cartNo:'',
+      cartNo: '',
       level: '普通用户'
+    },
+    cardOwner: {
+      lastname: '',
+      sex: '',
+      phoneEmail: '',
+      address: '',
+      nickName: ''
     },
     // 会员权益
     vipRights: {
@@ -37,13 +44,16 @@ Page({
     // 活动打开的详情
     activeItem: ''
   },
-  onLoad: function (option){
+  onLoad: function (option) {
     let that = this;
+    var userInfo = app.getUserInfo();
     app.getStorage({
       key: 'vipNo',
       success: function (res) {
         console.log(res.data);
-        that.setData({ 'cardDetail.cardNo': res.data});    
+        that.setData({
+          'cardDetail.cardNo': res.data
+        });
       },
       fail: function (res) {
         if (option && option.vipNo)
@@ -53,15 +63,36 @@ Page({
       }
     });
 
-
-    
+    app.getStorage({
+      key: 'lastName',
+      success: function (res) {
+        that.setData({
+          'cardOwner.lastname': res.data
+        });
+      }
+    });
+    app.getStorage({
+      key: 'phoneEmail',
+      success: function (res) {
+        that.setData({
+          'cardOwner.phoneEmail': res.data
+        });
+      }
+    });
+    if (userInfo) {
+      that.setData({
+        'cardOwner.sex': userInfo.sex == 0 ? '男' : userInfo.sex == 1 ? '女' : '未知',
+        'cardOwner.address': userInfo.country + ',' + userInfo.province + ',' + userInfo.city,
+        'cardOwner.nickName': userInfo.nickname
+      });
+    }
     this.getVipInfo();
   },
   // onShow: function(){
   //   app.checkIfBindPhone();
   // },
   // 获取会员卡信息
-  getVipInfo: function(){
+  getVipInfo: function () {
     let that = this;
     app.sendRequest({
       url: '/index.php?r=AppShop/GetVIPInfo',
@@ -69,8 +100,8 @@ Page({
         'app_id': app.globalData.appId,
         'is_all': 1
       },
-      success: function(res){
-        let cardBackground  = ''
+      success: function (res) {
+        let cardBackground = ''
         if (parseInt(res.data.background_type) == 0) {
           cardBackground = 'url(' + res.data.background + ') 0% 0% / 100% 100%';
         } else {
@@ -104,7 +135,7 @@ Page({
     });
   },
   // 展示对应内容
-  showItemContent: function(event){
+  showItemContent: function (event) {
     let that = this;
     let _item = event.currentTarget.dataset.item;
     if (that.data.activeItem == _item) {

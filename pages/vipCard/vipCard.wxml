@@ -1,6 +1,6 @@
 <view class="page" id="vipCard">
   <view class="yes-receive-card" wx:if="{{ receiveCard == 1 }}">
-    <view class="card-wrap" >
+    <view class="card-wrap">
       <view class="card" style="background: {{ cardDetail.cardBackground }}">
         <image class="logo" src="{{ cardDetail.logoUrl }}"></image>
         <view class="title">{{ cardDetail.appName }}</view>
@@ -11,27 +11,66 @@
     </view>
     <view class="card-content">
       <view class="card-item">
-        <view class="item-title {{ activeItem == 'rights' ? 'active' : ''}}" catchtap="showItemContent" data-item="rights" >
+        <view class="item-title {{ activeItem == 'rights' ? 'active' : ''}}" catchtap="showItemContent" data-item="rights">
+          <text>会员信息</text>
+          <label class="ico-moon icon-downarrow"></label>
+        </view>
+        <view class="item-body vipCard-rights {{ activeItem == 'rights' ? 'active' : ''}}">
+          <view class="content">
+            <block>
+              <view class="item">姓名</view>
+              <view class="item">{{cardOwner.lastname}}</view>
+            </block>
+            <block>
+              <view class="item">性别</view>
+              <view class="item">{{cardOwner.sex}}
+              </view>
+            </block>
+            <block>
+              <view class="item">联系方式</view>
+              <view class="item">{{cardOwner.phoneEmail}}
+              </view>
+            </block>
+            <block>
+              <view class="item">地址</view>
+              <view class="item">{{cardOwner.address}}
+              </view>
+            </block>
+            <block>
+              <view class="item">微信昵称</view>
+              <view class="item">
+                {{cardOwner.nickName}}
+              </view>
+            </block>
+
+          </view>
+        </view>
+      </view>
+      <view class="card-item">
+        <view class="item-title {{ activeItem == 'rights' ? 'active' : ''}}" catchtap="showItemContent" data-item="rights">
           <text>会员权益</text>
           <label class="ico-moon icon-downarrow"></label>
         </view>
         <view class="item-body vipCard-rights {{ activeItem == 'rights' ? 'active' : ''}}">
           <view class="content">
-            <block wx:if="{{ vipRights.freePostage == 1 }}" >
+            <block wx:if="{{ vipRights.freePostage == 1 }}">
               <view class="item">包邮</view>
               <view class="item">所有商品购买后统统包邮</view>
             </block>
             <block wx:if="{{ vipRights.discount != 0 }}">
               <view class="item">打折</view>
-              <view class="item">所有商品一律<span>{{ vipRights.discount }}</span>折</view>
+              <view class="item">所有商品一律
+                <span>{{ vipRights.discount }}</span>折</view>
             </block>
             <block wx:if="{{ vipRights.giveCouponStr != '' }}">
               <view class="item">优惠券</view>
-              <view class="item"><span>{{ vipRights.giveCouponStr }}</span>购买商品时抵用</view>
+              <view class="item">
+                <span>{{ vipRights.giveCouponStr }}</span>购买商品时抵用</view>
             </block>
             <block wx:if="{{ vipRights.integral != 0 }}">
               <view class="item">积分</view>
-              <view class="item">注册成功即赠送<span>{{ vipRights.integral }}</span>积分</view>
+              <view class="item">注册成功即赠送
+                <span>{{ vipRights.integral }}</span>积分</view>
             </block>
           </view>
         </view>
@@ -41,7 +80,7 @@
           <text>使用须知</text>
           <label class="ico-moon icon-downarrow"></label>
         </view>
-        <view class="item-body vipCard-notice {{ activeItem == 'notice' ? 'active' : ''}}" >
+        <view class="item-body vipCard-notice {{ activeItem == 'notice' ? 'active' : ''}}">
           <view class="content">
             <view class="item">权限说明</view>
             <view class="item">会员权限会随着会员卡等级上升而加强，相应特权请留意会员卡下方的会员权益。</view>
