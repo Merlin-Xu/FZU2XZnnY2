@@ -331,16 +331,7 @@ var pageData = {
         return;
       },
       fail: function () {
-        app.scanCode({
-          onlyFromCamera: true,
-          success: function (res) {
-            console.log(res);
-            app.turnToPage('../bindForm/bindForm', false);
-          },
-          fail: function (res) {
-            console.log(res);
-          }
-        });
+        app.turnToPage('../bindForm/bindForm', false);
       }
     });
   },
