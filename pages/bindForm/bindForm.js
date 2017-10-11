@@ -64,7 +64,7 @@ Page({
       success: (res) => {
         console.log(res.result)
         this.setData({
-          loyalTNum: res.result
+          vipCardNo: res.result
         })
       }
     })
