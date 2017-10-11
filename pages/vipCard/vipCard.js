@@ -38,7 +38,7 @@ Page({
     activeItem: ''
   },
   onLoad: function (option){
-    this.setData({ 'cardDetail.cardNo': option.cardNo });
+    this.setData({ 'cardDetail.cardNo': (option.cardNo ? option.cardNo:"E000001") });
     this.getVipInfo();
   },
   // onShow: function(){

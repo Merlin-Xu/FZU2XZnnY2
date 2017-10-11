@@ -36,10 +36,14 @@ function isPhoneNumber(num) {
   return /^1\d{10}$/.test(num);
 }
 
+function isEmail(str){
+  return /^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/.test(str);
+}
 module.exports = {
   formatTime: formatTime,
   isPlainObject: isPlainObject,
   isPhoneNumber: isPhoneNumber,
+  isEmail: isEmail,
   formatDistance: formatDistance
 }
 

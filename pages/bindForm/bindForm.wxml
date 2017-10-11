@@ -4,15 +4,15 @@
      <view class="centerPage-info-item">
       <label>LoyalT</label>
       <image class="icon-right" src='../../image/scan.png' mode="aspectFit" bindtap='bindScan'></image>
-      <input id="LoyalTNum" class="nickname" placeholder="必填" value="{{loyalTNum}}"></input>
+      <input id="LoyalTNum"  bindinput="inputCardNo"  class="nickname" placeholder="必填" value="{{loyalTNum}}"></input>
     </view> 
     <view class="centerPage-info-item">
       <label>Email/Phone</label>
-      <input id="emailOrPhone" class="nickname" placeholder="必填"></input>
+      <input id="emailOrPhone"  bindinput="inputPhone" value="{{verifyPhone}}" class="nickname" placeholder="必填"></input>
     </view> 
     <view class="centerPage-info-item">
       <label>Last Name</label>
-      <input id="LastName" class="nickname" placeholder="必填"></input>
+      <input id="LastName"  bindinput="inputLastName" value="{{lastName}}" class="nickname" placeholder="必填"></input>
     </view> 
   </view>
   <view class="centerPage-save-btn" bindtap="bindLoyalT">保存 
