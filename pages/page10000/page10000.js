@@ -330,19 +330,46 @@ var pageData = {
     })
   },
   redirectProfile: function (e) {
-    wx.navigateTo({
-      url: '../page10003/page10003'
+    app.getStorage({
+      key: 'vipNo',
+      success: function (res) {
+        wx.navigateTo({
+          url: '../page10003/page10003'
+        });
+      },
+      fail: function (res) {
+        app.showModal({
+          title:"提示",
+          content:"您并没有绑定会员卡",
+          confirmText:"绑定",
+          showCancel:true,
+          cancelText:"取消",
+          confirm:function(e){
+            app.turnToPage('../bindForm/bindForm', false);
+          }
+        })
+      }
     });
     },
   registerScan: function(e){
-    wx.scanCode({
-      onlyFromCamera: true,
-      success: (res) => {
-        wx.navigateTo({
-          url: '../registerForm/registerForm',
+    app.getStorage({
+      key: 'vipNo',
+      success: function (res) {
+        app.turnToPage('../vipCard/vipCard?cardNo=' + vipCardNo, false);
+        return;
+      },
+      fail:function(res){
+        wx.scanCode({
+          onlyFromCamera: true,
+          success: (res) => {
+            wx.navigateTo({
+              url: '../page10002?scanCode=res',
+            })
+          }
         })
       }
-    })
+    });
+    
   }
 };
 Page(pageData);
