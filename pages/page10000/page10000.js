@@ -325,7 +325,9 @@ var pageData = {
     this.keywordList[e.currentTarget.dataset.compid] = e.detail.value;
   },
   bindExistingScan:function (e) {
-    
+    wx.navigateTo({
+      url: '../bindPhysicalVipCard/bindVipCard'
+    });
   },
   redirectProfile: function (e) {
     wx.navigateTo({

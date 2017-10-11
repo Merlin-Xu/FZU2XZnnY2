@@ -1,0 +1,13 @@
+<view class="page bindPhone-wrap" id="bindCardPage" data-router="bindCardPage">
+  <view class="bind-new-tel-wrap">
+    <view class="verify-row">
+      <label class="item-name">会员卡号</label>
+      <input bindinput="inputCardNo" placeholder="会员卡号" />
+    </view>
+    <view class="verify-row" style="border-bottom: 1px solid #e5e5e5;">
+      <label class="item-name">预留手机</label>
+      <input class="code-tel" bindinput="inputPhone" value="{{verifyPhone}}" placeholder="请输入预留手机号" />
+    </view>
+    <label class="option-btn bind-new-tel-btn" bindtap="bindVipPhone">绑定到卡包</label>
+  </view>
+</view>

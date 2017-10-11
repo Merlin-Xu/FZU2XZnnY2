@@ -1,9 +1,28 @@
 {
-  "pages": ["pages/page10000/page10000","pages/page10002/page10002","pages/page10003/page10003","pages/bindCellphone/bindCellphone","pages/advanceSearch/advanceSearch","pages/extensionPage/extensionPage","pages/userCenter/userCenter","pages/myMessage/myMessage","pages/myIntegral/myIntegral","pages/couponList/couponList","pages/couponListPage/couponListPage","pages/couponDetail/couponDetail","pages/couponReceiveListPage/couponReceiveListPage","pages/vipCard/vipCard","pages/transferPage/transferPage","pages/transferOrderDetail/transferOrderDetail","pages/transferPaySuccess/transferPaySuccess"],
+  "pages": [
+    "pages/page10000/page10000",
+    "pages/page10002/page10002",
+    "pages/page10003/page10003",
+    "pages/bindCellphone/bindCellphone",
+    "pages/advanceSearch/advanceSearch",
+    "pages/extensionPage/extensionPage",
+    "pages/userCenter/userCenter",
+    "pages/myMessage/myMessage",
+    "pages/myIntegral/myIntegral",
+    "pages/couponList/couponList",
+    "pages/couponListPage/couponListPage",
+    "pages/couponDetail/couponDetail",
+    "pages/couponReceiveListPage/couponReceiveListPage",
+    "pages/vipCard/vipCard",
+    "pages/transferPage/transferPage",
+    "pages/transferOrderDetail/transferOrderDetail",
+    "pages/transferPaySuccess/transferPaySuccess",
+    "pages/bindPhysicalVipCard/bindVipCard"
+  ],
   "window": {
     "enablePullDownRefresh": false
   },
-    "networkTimeout": {
+  "networkTimeout": {
     "request": 10000,
     "connectSocket": 10000,
     "uploadFile": 10000,

@@ -10,6 +10,7 @@ Page({
       appName: 'DFS miniP',
       logoUrl: 'http://cdn.jisuapp.cn/zhichi_frontend/static/invitation/images/logo.png',
       duration: '无限期',
+      cartNo:'',
       level: '普通用户'
     },
     // 会员权益
@@ -36,7 +37,8 @@ Page({
     // 活动打开的详情
     activeItem: ''
   },
-  onLoad: function(){
+  onLoad: function (option){
+    this.setData({ 'cardDetail.cardNo': option.cardNo });
     this.getVipInfo();
   },
   // onShow: function(){

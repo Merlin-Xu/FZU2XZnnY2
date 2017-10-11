@@ -38,6 +38,14 @@
   left: 80px;
   color: #fff;
 }
+#vipCard .card .cardno {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  color: #fff;
+  letter-spacing: 4px;
+  text-shadow:1px 0 #eee,0 -1px #eee, 1px 0 #333,0 1px #333;
+}
 #vipCard .card .duration {
   position: absolute;
   bottom: 20px;

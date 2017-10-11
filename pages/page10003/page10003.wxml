@@ -75,24 +75,6 @@
               <text>积分</text>
               <label class="ico-moon icon-rightarrow"></label>
             </view>
-            <view wx:elif="{{ item == 'balance' }}"
-                  catchtap="userCenterTurnToPage"
-                  data-router="balance"
-                  data-open-verify-phone="{{ data.customFeature.appendComponentAttr['balance']['openVerifyPhone'] }}"
-                  style="margin-top: {{ data.customFeature.appendComponentAttr['balance']['margin-top'] }}">
-              <label class="ico-moon icon-balance"></label>
-              <text>储值金</text>
-              <label class="ico-moon icon-rightarrow"></label>
-            </view>
-            <view wx:elif="{{ item == 'myGroup' }}"
-                  catchtap="userCenterTurnToPage"
-                  data-router="myGroup"
-                  data-open-verify-phone="{{ data.customFeature.appendComponentAttr['myGroup']['openVerifyPhone'] }}"
-                  style="margin-top: {{ data.customFeature.appendComponentAttr['myGroup']['margin-top'] }}">
-              <label class="ico-moon icon-group-buy"></label>
-              <text>我的拼团</text>
-              <label class="ico-moon icon-rightarrow"></label>
-            </view>
           </block>
         </view>
       </view>
