@@ -56,7 +56,7 @@ Page({
         app.setStorage({ key: "vipNo", data:vipCardNo});
         app.setStorage({ key: "phoneEmail", data: verifyPhone });
         app.setStorage({ key: "lastName", data: lastName });
-        app.turnToPage('../vipCard/vipCard?cardNo=' + vipCardNo, false);
+        app.turnToPage('../vipCard/vipCard?cardNo=' + vipCardNo, true);
       }
     });
   },
