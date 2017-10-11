@@ -125,6 +125,7 @@
           </view>
         </view>
       </view>
+      <view class="centerPage-save-btn" bindtap="unbindLoyalT">解绑此卡 </view>
     </view>
   </view>
   <view class="no-receive-card" wx:elif="{{ receiveCard == 0 }}">

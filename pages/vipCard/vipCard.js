@@ -144,5 +144,11 @@ Page({
     that.setData({
       'activeItem': _item
     });
+  },
+  unbindLoyalT: function(e){
+    app.removeStorage({key: 'vipNo'});
+    app.removeStorage({ key: 'phoneEmail' });
+    app.removeStorage({ key: 'lastName' });
+    app.turnToPage('../page10000/page10000', true);
   }
 })
