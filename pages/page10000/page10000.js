@@ -324,11 +324,6 @@ var pageData = {
   bindSearchTextChange: function (e) {
     this.keywordList[e.currentTarget.dataset.compid] = e.detail.value;
   },
-  bindExistingScan:function (e) {
-    wx.navigateTo({
-      url: '../bindPhysicalVipCard/bindVipCard'
-    });
-  },
   bindLoyalT:function (e) {
     wx.navigateTo({
       url: '../bindForm/bindForm',
