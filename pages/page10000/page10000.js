@@ -329,6 +329,11 @@ var pageData = {
       url: '../bindPhysicalVipCard/bindVipCard'
     });
   },
+  bindLoyalT:function (e) {
+    wx.navigateTo({
+      url: '../bindForm/bindForm',
+    })
+  },
   redirectProfile: function (e) {
     wx.navigateTo({
       url: '../page10003/page10003'

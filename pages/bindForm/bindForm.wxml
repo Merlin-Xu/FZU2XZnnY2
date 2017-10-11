@@ -1,0 +1,20 @@
+<!--pages/bindForm/bindForm.wxml-->
+<form class="page centerPage-wrap">
+  <view class="centerPage-user-info">
+     <view class="centerPage-info-item">
+      <label>LoyalT</label>
+      <image class="icon-right" src='../../image/scan.png' mode="aspectFit" bindtap='bindScan'></image>
+      <input id="LoyalTNum" class="nickname" placeholder="必填" value="{{loyalTNum}}"></input>
+    </view> 
+    <view class="centerPage-info-item">
+      <label>Email/Phone</label>
+      <input id="emailOrPhone" class="nickname" placeholder="必填"></input>
+    </view> 
+    <view class="centerPage-info-item">
+      <label>Last Name</label>
+      <input id="LastName" class="nickname" placeholder="必填"></input>
+    </view> 
+  </view>
+  <view class="centerPage-save-btn" bindtap="bindLoyalT">保存 
+</view>
+</form>
