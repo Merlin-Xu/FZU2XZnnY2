@@ -323,5 +323,27 @@ var pageData = {
   bindSearchTextChange: function (e) {
     this.keywordList[e.currentTarget.dataset.compid] = e.detail.value;
   },
+  bindTapVip: function(e){
+    app.getStorage({
+      key: 'vipNo',
+      success: function (res) {
+        wx.navigateTo({
+          url: '../vipCard/vipCard'
+        });
+      },
+      fail: function (res) {
+        app.showModal({
+          title: "提示",
+          content: "您并没有绑定会员卡",
+          confirmText: "绑定",
+          showCancel: true,
+          cancelText: "取消",
+          confirm: function (e) {
+            app.turnToPage('../bindForm/bindForm', false);
+          }
+        })
+      }
+    });
+  }
 };
 Page(pageData);

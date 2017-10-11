@@ -49,8 +49,7 @@
               <label class="ico-moon icon-rightarrow"></label>
             </view>
             <view wx:elif="{{ item == 'vipCard' }}"
-                  catchtap="userCenterTurnToPage"
-                  data-router="vipCard"
+                  bindtap='bindTapVip'
                   data-open-verify-phone="{{ data.customFeature.appendComponentAttr['vipCard']['openVerifyPhone'] }}"
                   style="margin-top: {{ data.customFeature.appendComponentAttr['vipCard']['margin-top'] }}">
               <label class="ico-moon icon-vip-card"></label>

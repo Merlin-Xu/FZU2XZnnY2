@@ -324,31 +324,28 @@ var pageData = {
     this.keywordList[e.currentTarget.dataset.compid] = e.detail.value;
   },
   bindLoyalT: function (e) {
-    wx.navigateTo({
-      url: '../bindForm/bindForm',
-    })
-  },
-  redirectProfile: function (e) {
     app.getStorage({
       key: 'vipNo',
       success: function (res) {
-        wx.navigateTo({
-          url: '../page10003/page10003'
-        });
+        app.turnToPage('../vipCard/vipCard', false);
+        return;
       },
-      fail: function (res) {
-        app.showModal({
-          title: "提示",
-          content: "您并没有绑定会员卡",
-          confirmText: "绑定",
-          showCancel: true,
-          cancelText: "取消",
-          confirm: function (e) {
+      fail: function () {
+        app.scanCode({
+          onlyFromCamera: true,
+          success: function (res) {
+            console.log(res);
             app.turnToPage('../bindForm/bindForm', false);
+          },
+          fail: function (res) {
+            console.log(res);
           }
-        })
+        });
       }
     });
+  },
+  redirectProfile: function (e) {
+    app.turnToPage('../page10003/page10003', false);
   },
   registerScan: function (e) {
     app.getStorage({
