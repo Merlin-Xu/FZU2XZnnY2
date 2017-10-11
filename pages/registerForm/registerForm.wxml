@@ -1,0 +1,32 @@
+<!--pages/registerForm/registerForm.wxml-->
+<form class="page centerPage-wrap">
+  <view class="centerPage-user-info">
+     <view class="centerPage-info-item">
+      <label>Name</label>
+      <input id="Name" class="nickname" bindinput="inputName" placeholder="必填" value="{{name}}"></input>
+    </view> 
+    <view class="centerPage-info-item">
+      <label>Email/Phone</label>
+      <input id="emailOrPhone"  bindinput="inputPhone" value="{{verifyPhone}}" class="nickname" placeholder="必填"></input>
+    </view> 
+    <view class="centerPage-info-item">
+      <label>Country</label>
+      <input id="Country" bindinput="inputCountry" value="{{country}}" class="nickname" placeholder="必填"></input>
+    </view> 
+    <view class="centerPage-info-item">
+      <label>Brand</label>
+      <input id="Brand" bindinput="inputBrand" value="{{brand}}" class="nickname" placeholder="选填"></input>
+    </view> 
+    <view class="centerPage-info-item">
+      <label>Store</label>
+      <input id="Store" bindinput="inputStore" value="{{store}}" class="nickname" placeholder="选填"></input>
+    </view> 
+    <view class="centerPage-info-item">
+      <label>Channel</label>
+      <input id="Channel" bindinput="inputChannel" value="{{channel}}" class="nickname" placeholder="选填"></input>
+    </view> 
+  </view>
+  <view class="centerPage-save-btn" bindtap="createCard">创建 
+</view>
+</form>
+

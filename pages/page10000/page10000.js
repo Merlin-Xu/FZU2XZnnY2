@@ -344,11 +344,10 @@ var pageData = {
       onlyFromCamera: true,
       success: (res) => {
         wx.navigateTo({
-          url: '../page10002?scanCode=res',
+          url: '../registerForm/registerForm',
         })
       }
     })
-
   }
 };
 Page(pageData);
