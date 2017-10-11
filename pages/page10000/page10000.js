@@ -352,10 +352,11 @@ var pageData = {
     });
     },
   registerScan: function(e){
+
     app.getStorage({
       key: 'vipNo',
       success: function (res) {
-        app.turnToPage('../vipCard/vipCard?cardNo=' + vipCardNo, false);
+        app.turnToPage('../vipCard/vipCard', false);
         return;
       },
       fail:function(res){
