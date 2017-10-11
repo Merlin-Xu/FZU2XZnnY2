@@ -324,8 +324,10 @@ var pageData = {
   bindSearchTextChange: function (e) {
     this.keywordList[e.currentTarget.dataset.compid] = e.detail.value;
   },
-  bindExistingScan:function (e) {
-    
+  bindLoyalT:function (e) {
+    wx.navigateTo({
+      url: '../bindForm/bindForm',
+    })
   },
   redirectProfile: function (e) {
     wx.navigateTo({
