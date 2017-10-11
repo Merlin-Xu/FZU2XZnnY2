@@ -53,6 +53,9 @@ Page({
       title: '绑定成功',
       icon: 'success',
       success: function () {
+        app.setStorage({ key: "vipNo", data:vipCardNo});
+        app.setStorage({ key: "phoneEmail", data: verifyPhone });
+        app.setStorage({ key: "lastName", data: lastName });
         app.turnToPage('../vipCard/vipCard?cardNo=' + vipCardNo, false);
       }
     });

@@ -38,7 +38,23 @@ Page({
     activeItem: ''
   },
   onLoad: function (option){
-    this.setData({ 'cardDetail.cardNo': (option.cardNo ? option.cardNo:"E000001") });
+    let that = this;
+    app.getStorage({
+      key: 'vipNo',
+      success: function (res) {
+        console.log(res.data);
+        that.setData({ 'cardDetail.cardNo': res.data});    
+      },
+      fail: function (res) {
+        if (option && option.vipNo)
+          that.setData({ 'cardDetail.cardNo': res });
+        else
+          app.turnToPage('../page10000/page10000', true);
+      }
+    });
+
+
+    
     this.getVipInfo();
   },
   // onShow: function(){
