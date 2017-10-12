@@ -1,20 +1,27 @@
 <!--pages/bindForm/bindForm.wxml-->
-<form class="page centerPage-wrap">
-  <view class="centerPage-user-info">
-     <view class="centerPage-info-item">
-      <label></label>
-      <input id="LoyalTNum"  bindinput="inputCardNo"  class="nickname" placeholder="T贵宾会会员编号" value="{{vipCardNo}}"></input>
-       <image class="icon-right" src='../../image/scan.png' mode="aspectFit" bindtap='bindScan'></image> 
-    </view> 
-    <view class="centerPage-info-item">
-      <label></label>
-      <input id="emailOrPhone"  bindinput="inputPhone" value="{{verifyPhone}}" class="nickname" placeholder="电邮地址/电话号码"></input>
-    </view> 
-    <view class="centerPage-info-item">
-      <label></label>
-      <input id="LastName"  bindinput="inputLastName" value="{{lastName}}" class="nickname" placeholder="姓氏"></input>
-    </view> 
+<image src='../../image/cardface.jpg'  style="margin-bottom: 15px;"/>
+<form>
+
+  <label style="margin: 15px">请填写以下其中一项</label>
+
+  <view class="input-item">
+    <input class="input" style='margin-right: 35px' id="LoyalTNum"  bindinput="inputCardNo" placeholder="输入会员卡上的会员编号" value="{{vipCardNo}}"></input>
+    <image class="icon-right" src='../../image/scan.png' mode="aspectFit" bindtap='bindScan' style="width: 10%"></image>
   </view>
-  <view class="centerPage-save-btn" bindtap="bindLoyalT">保存 
+
+  <view class="input-item">
+    <input class="input" id="emailOrPhone"  bindinput="inputPhone" value="{{verifyPhone}}" placeholder="请输入已登记的邮箱"></input>
+  </view>
+
+  <view class="input-item">
+    <input class="input" id="LastName"  bindinput="inputLastName" value="{{lastName}}" placeholder="请输入已登记的手机号"></input>
+  </view>
+
+  <view>
+    <view class="button" bindtap="back" style='background-color: #000;'>返回 
 </view>
+    <view class="button" bindtap="bindLoyalT"  style='background-color: #f00; position: relative; left: 50%; top: -150rpx;'>保存 
+</view>
+  </view>
+
 </form>
