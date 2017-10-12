@@ -1,0 +1,28 @@
+#vipCardDetail .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*垂直居中*/
+  justify-content: center; /*水平居中*/
+}
+
+#vipCardDetail .card .logo {
+  margin-top: 30%;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  align-items: center;
+}
+
+#vipCardDetail .card .barcode {
+  margin-top: 10%;
+  width: 70%;
+  height: 100px;
+  vertical-align: middle;
+  align-items: center;
+}
+#vipCardDetail .card .tipText{
+  margin-top: 20px;
+  color: #222;
+  opacity: 0.8;
+  font-size: 14px;
+}

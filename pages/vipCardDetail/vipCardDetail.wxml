@@ -1,0 +1,7 @@
+<view class="page" id="vipCardDetail">
+    <view class="card">
+      <image class="logo" src="../../image/Loyal-T-Logo.jpg"></image>
+      <image class="barcode" src="../../image/cnaidc.png"></image>
+      <view class="tipText">使用时请向服务员出示此券</view>
+    </view>
+</view>

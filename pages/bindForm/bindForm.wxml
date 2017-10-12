@@ -2,17 +2,17 @@
 <form class="page centerPage-wrap">
   <view class="centerPage-user-info">
      <view class="centerPage-info-item">
-      <label>LoyalT</label>
-      <image class="icon-right" src='../../image/scan.png' mode="aspectFit" bindtap='bindScan'></image>
-      <input id="LoyalTNum"  bindinput="inputCardNo"  class="nickname" placeholder="必填" value="{{vipCardNo}}"></input>
+      <label></label>
+      <input id="LoyalTNum"  bindinput="inputCardNo"  class="nickname" placeholder="T贵宾会会员编号" value="{{vipCardNo}}"></input>
+       <image class="icon-right" src='../../image/scan.png' mode="aspectFit" bindtap='bindScan'></image> 
     </view> 
     <view class="centerPage-info-item">
-      <label>Email/Phone</label>
-      <input id="emailOrPhone"  bindinput="inputPhone" value="{{verifyPhone}}" class="nickname" placeholder="必填"></input>
+      <label></label>
+      <input id="emailOrPhone"  bindinput="inputPhone" value="{{verifyPhone}}" class="nickname" placeholder="电邮地址/电话号码"></input>
     </view> 
     <view class="centerPage-info-item">
-      <label>Last Name</label>
-      <input id="LastName"  bindinput="inputLastName" value="{{lastName}}" class="nickname" placeholder="必填"></input>
+      <label></label>
+      <input id="LastName"  bindinput="inputLastName" value="{{lastName}}" class="nickname" placeholder="姓氏"></input>
     </view> 
   </view>
   <view class="centerPage-save-btn" bindtap="bindLoyalT">保存 

@@ -1,21 +1,24 @@
 <view class="page" id="vipCard">
   <view class="yes-receive-card" wx:if="{{ receiveCard == 1 }}">
-    <view class="card-wrap">
-      <view class="card" style="background: {{ cardDetail.cardBackground }}">
-        <image class="logo" src="{{ cardDetail.logoUrl }}"></image>
-        <view class="title">{{ cardDetail.appName }}</view>
-        <view class="level">{{ cardDetail.level }}</view>
-        <view class="cardno">{{ cardDetail.cardNo }}</view>
-        <view class="duration">{{ cardDetail.duration }}</view>
+    <navigator url="../vipCardDetail/vipCardDetail" hover-class="navigator-hover">
+      <view class="card-wrap" bindtap='redirectDetail'>
+        <view class="card" style="background: {{ cardDetail.cardBackground }}">
+          <image class="logo" src="{{ cardDetail.logoUrl }}"></image>
+          <image class="barcode" src="../../image/qr-code.png"></image>
+          <view class="title">{{ cardDetail.appName }}</view>
+          <view class="level">{{ cardDetail.level }}</view>
+          <view class="cardno">{{ cardDetail.cardNo }}</view>
+          <view class="duration">{{ cardDetail.duration }}</view>
+        </view>
       </view>
-    </view>
+    </navigator>
     <view class="card-content">
       <view class="card-item">
-        <view class="item-title {{ activeItem == 'rights' ? 'active' : ''}}" catchtap="showItemContent" data-item="rights">
+        <view class="item-title {{ activeItem == 'message' ? 'active' : ''}}" catchtap="showItemContent" data-item="message">
           <text>会员信息</text>
           <label class="ico-moon icon-downarrow"></label>
         </view>
-        <view class="item-body vipCard-rights {{ activeItem == 'rights' ? 'active' : ''}}">
+        <view class="item-body vipCard-rights {{ activeItem == 'message' ? 'active' : ''}}">
           <view class="content">
             <block>
               <view class="item">姓名</view>

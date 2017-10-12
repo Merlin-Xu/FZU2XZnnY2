@@ -41,13 +41,14 @@ page {
 .centerPage-wrap .nickname,
 .centerPage-wrap .userCenter-tel,
 .centerPage-wrap .centerPage-sex {
-  float: right;
+  /* float: right; */
   border: none;
-  width: 60%;
+  width: 80%;
   line-height: 117rpx;
   height: 117rpx;
+  margin-left: 10px;
   margin-right: 25px;
-  color: #888;
+  color: #333;
   font-size: 14px;
 }
 .centerPage-wrap .centerPage-sex {

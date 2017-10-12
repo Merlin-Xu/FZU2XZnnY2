@@ -8,7 +8,7 @@ Page({
     // 卡片信息
     cardDetail: {
       appName: 'DFS miniP',
-      logoUrl: 'http://cdn.jisuapp.cn/zhichi_frontend/static/invitation/images/logo.png',
+      logoUrl: 'http:\/\/img.weiye.me\/zcimgdir\/album\/file_59dcb625a6d5d.gif',
       duration: '无限期',
       cartNo: '',
       level: '普通用户'
@@ -94,45 +94,46 @@ Page({
   // 获取会员卡信息
   getVipInfo: function () {
     let that = this;
-    app.sendRequest({
-      url: '/index.php?r=AppShop/GetVIPInfo',
-      data: {
-        'app_id': app.globalData.appId,
-        'is_all': 1
-      },
-      success: function (res) {
-        let cardBackground = ''
-        if (parseInt(res.data.background_type) == 0) {
-          cardBackground = 'url(' + res.data.background + ') 0% 0% / 100% 100%';
-        } else {
-          cardBackground = res.data.background;
-        }
-        let giveCouponStr = '';
-        if (res.data.is_vip != 0) {
-          for (let i = 0; i < res.data.coupon_list.length; i++) {
-            giveCouponStr = giveCouponStr + '免费赠送' + res.data.coupon_list[i].num + '张' + res.data.coupon_list[i].name + '的优惠券,';
-          }
-        }
-        that.setData({
-          'receiveCard': res.data.is_vip || 0,
-          'cardDetail.appName': res.data.app_name,
-          'cardDetail.logoUrl': res.data.logo,
-          'cardDetail.duration': res.data.expire,
-          'cardDetail.level': res.data.title,
-          'cardDetail.cardBackground': cardBackground,
-          'vipRights.discount': res.data.discount,
-          'vipRights.giveCouponStr': giveCouponStr,
-          'vipRights.integral': res.data.integral,
-          'vipRights.freePostage': res.data.is_free_postage,
-          'vipNotice.description': res.data.description,
-          'vipPoints.canUseIntegral': res.data.can_use_integral,
-          'vipPoints.totalIntegral': res.data.total_integral,
-          'vipPoints.consumeNum': res.data.consume_num,
-          'vipContact.appName': res.data.app_name,
-          'vipContact.phone': res.data.phone
-        });
+    // app.sendRequest({
+    //   url: '/index.php?r=AppShop/GetVIPInfo',
+    //   data: {
+    //     'app_id': app.globalData.appId,
+    //     'is_all': 1
+    //   },
+    //   success: function (res) {
+    let res = { "data": { "app_name": "DFS 免税店", "logo": "..\/..\/image\/Loyal-T-Logo.jpg", "title": "LoyalT Card", "background_type": "0", "background": "http:\/\/img.weiye.me\/zcimgdir\/album\/file_58a2c3de7cacf.jpg", "expire": "\u65e0\u9650\u671f", "is_vip": 1, "is_free_postage": "0", "discount": "8.00", "integral": "1000", "phone": "18524111216", "coupon_list": [{ "id": "8819", "name": "\u5168\u573a\u4e03\u6298", "num": "1" }], "description": "\u4efb\u610f\u95e8\u5e97\u5747\u53ef\u4eab\u7528", "consume_num": 0, "total_integral": "1000", "can_use_integral": "1000" }  };
+    let cardBackground = ''
+    if (parseInt(res.data.background_type) == 0) {
+      cardBackground = 'url(' + res.data.background + ') 0% 0% / 100% 100%';
+    } else {
+      cardBackground = res.data.background;
+    }
+    let giveCouponStr = '';
+    if (res.data.is_vip != 0) {
+      for (let i = 0; i < res.data.coupon_list.length; i++) {
+        giveCouponStr = giveCouponStr + '免费赠送' + res.data.coupon_list[i].num + '张' + res.data.coupon_list[i].name + '的优惠券,';
       }
+    }
+    that.setData({
+      'receiveCard': res.data.is_vip || 0,
+      'cardDetail.appName': res.data.app_name,
+      'cardDetail.logoUrl': res.data.logo,
+      'cardDetail.duration': res.data.expire,
+      'cardDetail.level': res.data.title,
+      'cardDetail.cardBackground': cardBackground,
+      'vipRights.discount': res.data.discount,
+      'vipRights.giveCouponStr': giveCouponStr,
+      'vipRights.integral': res.data.integral,
+      'vipRights.freePostage': res.data.is_free_postage,
+      'vipNotice.description': res.data.description,
+      'vipPoints.canUseIntegral': res.data.can_use_integral,
+      'vipPoints.totalIntegral': res.data.total_integral,
+      'vipPoints.consumeNum': res.data.consume_num,
+      'vipContact.appName': res.data.app_name,
+      'vipContact.phone': res.data.phone
     });
+    // }
+    // });
   },
   // 展示对应内容
   showItemContent: function (event) {
@@ -145,8 +146,8 @@ Page({
       'activeItem': _item
     });
   },
-  unbindLoyalT: function(e){
-    app.removeStorage({key: 'vipNo'});
+  unbindLoyalT: function (e) {
+    app.removeStorage({ key: 'vipNo' });
     app.removeStorage({ key: 'phoneEmail' });
     app.removeStorage({ key: 'lastName' });
     app.turnToPage('../page10000/page10000', true);

@@ -25,6 +25,14 @@
   left: 20px;
   top: 20px;
 }
+#vipCard .card .barcode {
+  height: 25px;
+  width: 25px;
+  overflow: hidden;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
 #vipCard .card .title {
   position: absolute;
   top: 20px;
