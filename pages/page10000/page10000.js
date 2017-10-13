@@ -369,6 +369,12 @@ var pageData = {
       }
     });
 
+  },
+
+  tabmine: function (e) {
+    wx.navigateTo({
+      url: '../page10003/page10003',
+    })
   }
 };
 Page(pageData);

@@ -1,0 +1,16 @@
+<!--pages/tab.wxml-->
+<template name='tab'>
+  <view class="tab-group">
+    <view class="tab" bindtap='tabhome' style='border-right: 1px solid #bbb;'>
+      <text class="{{position=='1'?'selected':'unselected'}}">首页</text>
+    </view>
+
+    <view class="tab" style='border-right: 1px solid #bbb;'>
+      <text class="{{position=='2'?'selected':'unselected'}}">二维码</text>
+    </view>
+
+    <view class="tab" bindtap='tabmine'>
+      <text class="{{position=='3'?'selected':'unselected'}}">我的</text>
+    </view>
+  </view>
+</template>

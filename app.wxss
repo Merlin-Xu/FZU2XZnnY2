@@ -3873,3 +3873,25 @@ a {
   white-space:pre-wrap;
 }
 
+.tab-group{
+  background-color: #fff;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.tab{
+  width: 33%;
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  position: relative; 
+}
+
+.tab .selected{
+  color: #f00;
+}
+
+.tab .unselected{
+  color: #000;
+}

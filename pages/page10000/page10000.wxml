@@ -1,3 +1,4 @@
+<import src='../tab.wxml'/>
 <view>
   <image src="../../image/cardface.jpg"></image>
 
@@ -17,4 +18,7 @@
     <text style='margin:20px; position: relative; top: -40px;text-align: center'>不是T贵宾会员？</text>
     <button size='mini' type='warn' style='position: relative; top: -30px;' bindtap='registerScan'>立即登记</button>
   </view>
+
 </view>
+
+<template is='tab' data="{{position:'1'}}"/>
