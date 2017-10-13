@@ -50,6 +50,12 @@ Page({
       })
       return;
     }
+    if (!util.isloyalT(vipCardNo)) {
+      app.showModal({
+        content: '您输入的T会员卡号码并不正确,请检查后再试'
+      });
+      return;
+    }
     if (verifyPhone && !util.isPhoneNumber(verifyPhone)) {
       app.showModal({
         content: '请输入正确的手机号码'

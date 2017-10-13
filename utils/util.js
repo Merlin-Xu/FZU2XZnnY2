@@ -39,11 +39,16 @@ function isPhoneNumber(num) {
 function isEmail(str){
   return /^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/.test(str);
 }
+
+function isloyalT(str){
+  return /^E[0 - 9]{6 }/.test(str);  
+}
 module.exports = {
   formatTime: formatTime,
   isPlainObject: isPlainObject,
   isPhoneNumber: isPhoneNumber,
   isEmail: isEmail,
+  isloyalT: isloyalT,
   formatDistance: formatDistance
 }
 
