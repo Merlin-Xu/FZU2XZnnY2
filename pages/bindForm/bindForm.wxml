@@ -1,8 +1,8 @@
-<image src='../../image/cardface.jpg' style="margin-bottom: 15px;" />
+<image src='../../image/cardface.jpg' style="margin-bottom: 15px;width:100%;" />
 <form>
-
-  <label style="margin: 15px">请填写您的卡号与一种联系方式</label>
-
+  <view>
+    <label style="margin: 15px">请填写您的卡号与一种联系方式</label>
+  </view>
   <view class="input-item">
     <input class="input" style='margin-right: 35px' id="LoyalTNum" bindinput="inputCardNo" placeholder="输入会员卡上的会员编号" value="{{vipCardNo}}"></input>
     <image class="icon-right" src='../../image/scan.png' mode="aspectFit" bindtap='bindScan' style="width: 10%"></image>
@@ -22,7 +22,7 @@
   <view class='button-group'>
     <view class="button" bindtap="back" style='background-color: #000;'>返回
     </view>
-    <view class="button button-second" bindtap="bindLoyalT" >保存
+    <view class="button button-second" bindtap="bindLoyalT">保存
     </view>
   </view>
 

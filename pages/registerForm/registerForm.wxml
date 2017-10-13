@@ -1,5 +1,5 @@
 <form>
-  <image src='http://img.weiye.me/zcimgdir/album/file_59df82b8b9370.png' style="margin-bottom: 15px;height:100px" />
+  <image src='http://img.weiye.me/zcimgdir/album/file_59df82b8b9370.png' style="margin-bottom: 15px;height:100px;width:100%;" />
   <label style="margin: 15px">请填写以下个人信息</label>
   <view class="page bindPhone-wrap" id="bindPhonePage" data-router="bindPhonePage">
     <view class="bind-new-tel-wrap">
