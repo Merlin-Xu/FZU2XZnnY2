@@ -16,7 +16,8 @@ Page({
     cardOwner: {
       lastname: '',
       sex: '',
-      phoneEmail: '',
+      phone: '',
+      email: '',
       address: '',
       nickName: ''
     },
@@ -72,10 +73,18 @@ Page({
       }
     });
     app.getStorage({
-      key: 'phoneEmail',
+      key: 'phone',
       success: function (res) {
         that.setData({
-          'cardOwner.phoneEmail': res.data
+          'cardOwner.phone': res.data
+        });
+      }
+    });
+    app.getStorage({
+      key: 'email',
+      success: function (res) {
+        that.setData({
+          'cardOwner.email': res.data
         });
       }
     });
@@ -148,7 +157,8 @@ Page({
   },
   unbindLoyalT: function (e) {
     app.removeStorage({ key: 'vipNo' });
-    app.removeStorage({ key: 'phoneEmail' });
+    app.removeStorage({ key: 'phone' });
+    app.removeStorage({ key: 'email' });
     app.removeStorage({ key: 'lastName' });
     app.turnToPage('../page10000/page10000', true);
   }

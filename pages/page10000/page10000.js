@@ -350,7 +350,17 @@ var pageData = {
           onlyFromCamera: true,
           success: function (res) {
             console.log(res);
-            app.turnToPage('../registerForm/registerForm?costMoney=' + res.result, false);
+            var shoppingMessage = JSON.parse(res.result),
+              store = '',
+              brand = '',
+              channel = '';
+            if (shoppingMessage.store) {
+              store = shoppingMessage.store;
+              brand = shoppingMessage.brand;
+              channel = shoppingMessage.channel;
+            }
+            console.log(shoppingMessage);
+            app.turnToPage('../registerForm/registerForm?store=' + store + '&brand=' + brand + '&channel=' + channel, false);
           },
           fail: function (res) {
             console.log(res);
