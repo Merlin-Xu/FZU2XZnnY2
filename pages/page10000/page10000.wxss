@@ -1,1 +1,4 @@
-page{background-color:rgb(255, 255, 255);margin-left:auto;}
+.icon{
+  width: 33%;
+  height: 50px;
+}
