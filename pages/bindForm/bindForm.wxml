@@ -19,10 +19,10 @@
     <input class="input" id="lastName" bindinput="inputLastName" value="{{lastName}}" placeholder="请输入您的姓名"></input>
   </view>
 
-  <view>
+  <view class='button-group'>
     <view class="button" bindtap="back" style='background-color: #000;'>返回
     </view>
-    <view class="button" bindtap="bindLoyalT" style='background-color: #f00; position: relative; left: 50%; top: -150rpx;'>保存
+    <view class="button button-second" bindtap="bindLoyalT" >保存
     </view>
   </view>
 
