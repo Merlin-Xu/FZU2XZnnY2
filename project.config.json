@@ -13,7 +13,7 @@
 	"appsceret": "6b16467581a2f0b57df80d336efdfb21",
 	"condition": {
 		"weapp": {
-			"current": 1,
+			"current": -1,
 			"list": [
 				{
 					"id": 0,
