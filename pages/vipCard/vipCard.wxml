@@ -29,9 +29,14 @@
               <view class="item">{{cardOwner.sex}}
               </view>
             </block>
-            <block>
+            <block wx:if="{{cardOwner.phone}}">
               <view class="item">联系方式</view>
-              <view class="item">{{cardOwner.phoneEmail}}
+              <view class="item">{{cardOwner.phone}}
+              </view>
+            </block>
+            <block wx:if="{{cardOwner.email}}">
+              <view class="item">电子邮箱</view>
+              <view class="item">{{cardOwner.email}}
               </view>
             </block>
             <block>

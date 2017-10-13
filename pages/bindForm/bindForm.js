@@ -5,6 +5,7 @@ Page({
 
   data: {
     verifyPhone: '',
+    verifyEmail: '',
     vipCardNo: '',
     lastName: ''
   },
@@ -27,6 +28,11 @@ Page({
       vipCardNo: e.detail.value
     })
   },
+  inputEmail: function (e) {
+    this.setData({
+      verifyEmail: e.detail.value
+    })
+  },
   inputLastName: function (e) {
     this.setData({
       lastName: e.detail.value
@@ -35,17 +41,24 @@ Page({
   bindLoyalT: function () {
     var that = this,
       verifyPhone = this.data.verifyPhone,
+      verifyEmail = this.data.verifyEmail,
       vipCardNo = this.data.vipCardNo,
       lastName = this.data.lastName;
-    if (!verifyPhone || !vipCardNo || !lastName) {
+    if ((!verifyPhone && !verifyEmail) || !vipCardNo) {
       app.showModal({
         content: '请填写完整的信息'
       })
       return;
     }
-    if (!util.isPhoneNumber(verifyPhone) && !util.isEmail(verifyPhone)) {
+    if (verifyPhone && !util.isPhoneNumber(verifyPhone)) {
       app.showModal({
-        content: '请输入正确的手机号码或邮箱'
+        content: '请输入正确的手机号码'
+      })
+      return;
+    }
+    if (verifyEmail && !util.isEmail(verifyEmail)) {
+      app.showModal({
+        content: '请输入正确的邮箱'
       })
       return;
     }
@@ -53,16 +66,19 @@ Page({
       title: '绑定成功',
       icon: 'success',
       success: function () {
-        app.setStorage({ key: "vipNo", data:vipCardNo});
-        app.setStorage({ key: "phoneEmail", data: verifyPhone });
+        app.setStorage({ key: "vipNo", data: vipCardNo });
+        if (verifyPhone)
+          app.setStorage({ key: "phone", data: verifyPhone });
+        if (verifyEmail)
+          app.setStorage({ key: "email", data: verifyEmail });
         app.setStorage({ key: "lastName", data: lastName });
         app.turnToPage('../vipCard/vipCard?cardNo=' + vipCardNo, true);
       }
     });
   },
 
-  bindScan: function(e){
-    wx.scanCode({
+  bindScan: function (e) {
+    app.scanCode({
       onlyFromCamera: true,
       success: (res) => {
         console.log(res.result)
@@ -71,5 +87,8 @@ Page({
         })
       }
     })
+  },
+  back: function (e) {
+    app.turnBack();
   }
 })

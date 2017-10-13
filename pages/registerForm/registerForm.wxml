@@ -1,32 +1,62 @@
-<!--pages/registerForm/registerForm.wxml-->
-<form class="page centerPage-wrap">
-  <view class="centerPage-user-info">
-     <view class="centerPage-info-item">
-      <label></label>
-      <input id="Name" class="nickname" bindinput="inputName" placeholder="姓氏" value="{{name}}"></input>
-    </view> 
-    <view class="centerPage-info-item">
-      <label></label>
-      <input id="emailOrPhone"  bindinput="inputPhone" value="{{verifyPhone}}" class="nickname" placeholder="电邮地址/电话号码"></input>
-    </view> 
-    <view class="centerPage-info-item">
-      <label></label>
-      <input id="Country" bindinput="inputCountry" value="{{country}}" class="nickname" placeholder="国家"></input>
-    </view> 
-    <view class="centerPage-info-item">
-      <label></label>
-      <input id="Brand" bindinput="inputBrand" value="{{brand}}" class="nickname" placeholder="品牌"></input>
-    </view> 
-    <view class="centerPage-info-item">
-      <label></label>
-      <input id="Store" bindinput="inputStore" value="{{store}}" class="nickname" placeholder="门店"></input>
-    </view> 
-    <view class="centerPage-info-item">
-      <label></label>
-      <input id="Channel" bindinput="inputChannel" value="{{channel}}" class="nickname" placeholder="柜台"></input>
-    </view> 
-  </view>
-  <view class="centerPage-save-btn" bindtap="createCard">创建 
-</view>
-</form>
+<form>
+  <image src='http://img.weiye.me/zcimgdir/album/file_59df82b8b9370.png' style="margin-bottom: 15px;height:100px" />
+  <label style="margin: 15px">请填写以下个人信息</label>
+  <view class="page bindPhone-wrap" id="bindPhonePage" data-router="bindPhonePage">
+    <view class="bind-new-tel-wrap">
+      <view class="verify-row" style="border-bottom: none;">
+        <label class="item-name name">姓名</label>
+        <input class="name" bindinput="inputName" placeholder="请输入姓名" />
+      </view>
+      <view class="verify-row" style="border-bottom: none;">
+        <label class="item-name name">国家</label>
+        <input class="name" bindinput="inputName" placeholder="请填写居住国家" />
+      </view>
+      <view class="verify-row" style="border-bottom: none;">
+        <label class="item-name name">性别</label>
+        <input class="name" value="{{sex}}" placeholder="" disabled/>
+      </view>
+      <view class="verify-row">
+        <label class="item-name name">邮箱</label>
+        <input class="name" bindinput="inputName" placeholder="请填写Email" />
+      </view>
+      <view class="verify-row" style="border-bottom: none;">
+        <label class="item-name">手机号 +86</label>
+        <input class="code-tel" value='{{verifyPhone}}' bindinput="inputPhone" placeholder="请输入新手机号" />
+      </view>
+      <view class="verify-row">
+        <label class="item-name code">验证码</label>
+        <input class="new-code" bindinput="inputNewCode" placeholder="验证码" />
+        <label class="get-code-btn" bindtap="sendCodeToNewPhone">{{ newCodeStatus }} </label>
+      </view>
 
+      <view class="seperator"></view>
+      <view class="input-item view"  wx:if="{{store}}">
+        <label for="store">
+          <span class="labelText">您本次购物的门店</span>
+          <input class="input" id="store" bindinput="inputStore" disabled value="{{store}}"></input>
+        </label>
+      </view>
+      <view class="input-item view" wx:if="{{brand}}">
+        <label for="store">
+          <span class="labelText">您本次所购买的品牌</span>
+          <input class="input" id="brand" bindinput="inputBrand" disabled value="{{brand}}"></input>
+        </label>
+      </view>
+      <view class="input-item view" wx:if="{{channel}}">
+        <label for="store">
+          <span class="labelText">为您结算的通道</span>
+          <input class="input" id="channel" bindinput="inputChannel" disabled value="{{channel}}"></input>
+        </label>
+      </view>
+      <!-- 
+    <view class="linkCnt">
+      <navigator url="../registerByEmail/regiterByEmail?name={{name}}" class="navigator-cls" hover-class="navigator-hover">
+      <div class="text-style">使用手机登记</div></navigator>
+    </view> -->
+      <view class='button-group'>
+        <view class="button" bindtap="back" style='background-color: #000;'>返回</view>
+        <view class="button button-second " bindtap="createCard">保存</view>
+      </view>
+    </view>
+  </view>
+</form>
