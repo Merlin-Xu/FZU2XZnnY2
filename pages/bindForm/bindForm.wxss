@@ -118,12 +118,16 @@ page {
   background: #f2f2f2;
   opacity: 0.8;
 }
-.navigator-cls {
-  margin: 40px 12px 10px;
-}
 
 .linkCnt {
-  margin-bottom: 40px;
+  margin: 20px 12px 10px;
+  font-weight: bold;
+  color: #222;
+
+}
+.linkCnt.second{
+  margin: 10px 12px 30px;
+
 }
 
 .text-style {

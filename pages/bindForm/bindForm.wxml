@@ -1,13 +1,15 @@
-<image src='{{step==1?"http://img.weiye.me/zcimgdir/album/file_59e02e5f1c5d0.png":"http://img.weiye.me/zcimgdir/album/file_59e02e5f07c02.png"}}' style="margin-bottom: 15px;width:100%;" />
+<image src='{{step==1?"http://img.weiye.me/zcimgdir/album/file_59e02e5f1c5d0.png":step==2?"http://img.weiye.me/zcimgdir/album/file_59e02e5f07c02.png":"http://img.weiye.me/zcimgdir/album/file_59e02e5f329be.png"}}' style="margin-bottom: 15px;width:100%;"
+/>
 <form class="step1">
+  <!-- 第一页 -->
   <view wx:if="{{step==1}}">
     <view>
-      <label style="margin: 15px ">请填写您的卡号与一种联系方式</label>
+      <label style="margin: 15px">请填写您的卡号与一种联系方式</label>
     </view>
     <view class="verify-row">
       <label class="item-name name">卡号</label>
       <input class="name" bindinput="inputCardNo" value='{{vipCardNo}}' placeholder="会员卡上的会员编号" />
-      <image class="icon-right " src='../../image/scan.png' mode="aspectFit " bindtap='bindScan' style="width: 10% "></image>
+      <image class="icon-right" src='../../image/scan.png' mode="aspectFit" bindtap='bindScan' style="width: 10%"></image>
     </view>
     <view class="verify-row">
       <label class="item-name name">邮箱</label>
@@ -30,26 +32,55 @@
     </view>
   </view>
   <view wx:elif="{{step==2}}" class='step2'>
-    <label style="margin: 15px "><span wx:if="{{newCodeBtnDisabled}}">已向您的手机发送一次性验证码,</span>请在下方输入验证码完成验证：</label>
-    <view class="page bindPhone-wrap " id="bindPhonePage " data-router="bindPhonePage ">
-      <view class="bind-new-tel-wrap ">
+    <label style="margin: 15px">
+      <span wx:if="{{newCodeBtnDisabled}}">已向您的手机发送一次性验证码,</span>请在下方输入验证码完成验证：</label>
+    <view class="page bindPhone-wrap" id="bindPhonePage" data-router="bindPhonePage">
+      <view class="bind-new-tel-wrap">
         <view class="verify-row disable" style="border-bottom: none;">
-          <label class="item-name ">手机号</label>
-          <input class="code-tel " value='{{verifyPhone}}' disabled/>
+          <label class="item-name">手机号</label>
+          <input class="code-tel" value='{{verifyPhone}}' disabled/>
         </view>
-        <view class="verify-row ">
-          <label class="item-name code ">验证码</label>
-          <input class="new-code " bindinput="inputNewCode" placeholder="验证码 " />
-          <label class="get-code-btn " bindtap="sendCodeToNewPhone">{{ newCodeStatus }} </label>
+        <view class="verify-row">
+          <label class="item-name code">验证码</label>
+          <input class="new-code" bindinput="inputNewCode" placeholder="验证码" />
+          <label class="get-code-btn" bindtap="sendCodeToNewPhone">{{ newCodeStatus }} </label>
         </view>
-        <view class="linkCnt ">
-          <navigator url="../registerByEmail/regiterByEmail?name={{name}} " class="navigator-cls " hover-class="navigator-hover ">
-            <div class="text-style ">使用手机登记</div>
+        <view class="linkCnt" bindtap="backStep">
+          <div class="text-style">更换手机登记</div>
+        </view>
+        <view class="linkCnt second" bindtap="backStep">
+          <div class="text-style">更换邮箱登记</div>
+        </view>
+        <view class='button-group'>
+          <view class="button" bindtap="backStep" style='background-color: #000;'>返回</view>
+          <view class="button button-second" bindtap="bindLoyalT">保存</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 第二页 -->
+  <view wx:elif="{{step==2}}" class='step2'>
+    <label style="margin: 15px">
+      <span wx:if="{{newCodeBtnDisabled}}">已向您的手机发送一次性验证码,</span>请在下方输入验证码完成验证：</label>
+    <view class="page bindPhone-wrap" id="bindPhonePage" data-router="bindPhonePage">
+      <view class="bind-new-tel-wrap">
+        <view class="verify-row disable" style="border-bottom: none;">
+          <label class="item-name">手机号</label>
+          <input class="code-tel" value='{{verifyPhone}}' disabled/>
+        </view>
+        <view class="verify-row">
+          <label class="item-name code">验证码</label>
+          <input class="new-code" bindinput="inputNewCode" placeholder="验证码" />
+          <label class="get-code-btn" bindtap="sendCodeToNewPhone">{{ newCodeStatus }} </label>
+        </view>
+        <view class="linkCnt">
+          <navigator url="../registerByEmail/regiterByEmail?name={{name}}" class="navigator-cls" hover-class="navigator-hover">
+            <div class="text-style">使用手机登记</div>
           </navigator>
         </view>
         <view class='button-group'>
-          <view class="button " bindtap="backStep" style='background-color: #000;'>返回</view>
-          <view class="button button-second " bindtap="createCard ">保存</view>
+          <view class="button" bindtap="backStep" style='background-color: #000;'>返回</view>
+          <view class="button button-second" bindtap="createCard">保存</view>
         </view>
       </view>
     </view>

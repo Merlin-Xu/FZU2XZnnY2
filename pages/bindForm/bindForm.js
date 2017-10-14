@@ -3,7 +3,7 @@ var util = require('../../utils/util.js')
 Page({
   data: {
     verifyEmail: '',
-    verifyPhone:'',
+    verifyPhone: '',
     vipCardNo: '',
     lastName: '',
     step: 2,
@@ -42,36 +42,56 @@ Page({
       lastName: e.detail.value
     })
   },
+  inputNewCode: function (e) {
+    this.setData({
+      newCode: e.detail.value
+    })
+  },
   bindLoyalT: function () {
     var that = this,
       verifyPhone = this.data.verifyPhone,
       verifyEmail = this.data.verifyEmail,
       vipCardNo = this.data.vipCardNo,
-      lastName = this.data.lastName;
-    if ((!verifyPhone && !verifyEmail) || !vipCardNo) {
+      lastName = this.data.lastName,
+      newCode = this.data.newCode;
+    if (!newCode) {
       app.showModal({
-        content: '请填写完整的信息'
+        content: '请输入验证码'
       })
       return;
     }
-    if (!util.isloyalT(vipCardNo)) {
-      app.showModal({
-        content: '您输入的T会员卡号码并不正确,请检查后再试'
-      });
-      return;
-    }
-    if (verifyPhone && !util.isPhoneNumber(verifyPhone)) {
-      app.showModal({
-        content: '请输入正确的手机号码'
-      })
-      return;
-    }
-    if (verifyEmail && !util.isEmail(verifyEmail)) {
-      app.showModal({
-        content: '请输入正确的邮箱'
-      })
-      return;
-    }
+
+    app.sendRequest({
+      url: '/index.php?r=AppData/VerifyPhone',
+      mehtod: 'post',
+      data: {
+        code: newCode
+      },
+      success: function (res) {
+        app.setUserInfoStorage({
+          phone: verifyPhone
+        });
+        app.setStorage({ key: "vipNo", data: vipCardNo });
+        if (verifyPhone)
+          app.setStorage({ key: "phone", data: verifyPhone });
+        if (verifyEmail)
+          app.setStorage({ key: "email", data: verifyEmail });
+        app.setStorage({ key: "lastName", data: lastName });
+      },
+      fail: function (res) {
+        app.showModal({
+          content: '绑定失败' + res.data
+        })
+      },
+      complete: function () {
+        that.setData({
+          bindNewPhoneBtnDisabled: false
+        })
+      }
+    });
+
+
+
     app.showToast({
       title: '绑定成功',
       icon: 'success',
@@ -143,11 +163,11 @@ Page({
   sendCodeToNewPhone: function () {
     var that = this,
       verifyPhone = this.data.verifyPhone;
-  console.log("enter");
+    console.log("enter");
     app.getStorage({
       key: 'session_key',
       success: function (res) {
-        console.log('test'+res);
+        console.log('test' + res);
         if (res.data == '') {
           app.showModal({
             content: '未获取授权，验证码获取失败'

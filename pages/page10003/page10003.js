@@ -27,7 +27,9 @@ var pageData = {
       "animations": [],
       "page_form": "",
       "compId": "carousel1"
-    }
+    },
+    userName: '',
+    cardNo: '',
   },
     need_login: false,
     page_router: 'page10003',

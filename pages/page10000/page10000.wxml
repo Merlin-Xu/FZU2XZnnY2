@@ -1,8 +1,8 @@
-<import src='../../utils/tab.wxml'/>
-<import src='../../utils/grid_icon.wxml'/>
+<import src='../../utils/tab.wxml' />
+<import src='../../utils/grid_icon.wxml' />
 <view style='padding-bottom: 50px'>
   <!-- <image src="../../image/cardface.jpg" style='width:100%;'></image> -->
-<template name="zcCarousel">
+  <!-- <template name="zcCarousel">
   <swiper class="swiper" indicator-dots="true" circular="true" autoplay="true" interval="2000" duration="750">
     <block wx:for="{{data.content}}" wx:key="">
       <swiper-item>
@@ -13,24 +13,27 @@
 </template>
 <view class="ele-container">
   <template is="zcCarousel" data="{{data:carousel}}"></template>
-</view>
-  <view style='background-color: #f51; text-align: center; padding: 10px;margin-top:-6px;'>
+</view> -->
+  <image src="../../image/cardface.jpg" style='width:100%;'></image>
+  <view style='background-color: #c54; text-align: center; padding: 10px;margin-top:-6px;'>
     <text style='color: #fff; display: block; margin-bottom: 5px;'>绑定T贵宾卡账户，随时随地享受优惠</text>
     <text style='color: #fff; border-bottom: 1px solid #fff;' bindtap='bindLoyalT'>立即绑定</text>
   </view>
 
   <view style='background-color: #fff; padding: 20px 0px 20px 0px; display: flex; flex-direction: row'>
-    <template is='grid-icon' data="{{end:false,url:'../../image/gift.png', title:'会员奖赏', width:'33%'}}"/>
-    <template is='grid-icon' data="{{end:false,url:'../../image/shopping.png', title:'线上购物', width:'33%'}}"/>
-    <template is='grid-icon' data="{{end:true,url:'../../image/contact.png', title:'联系客服', width:'33%'}}"/>
+    <template is='grid-icon' data="{{end:false,url:'../../image/gift.png', title:'会员奖赏', width:'33%'}}" />
+    <template is='grid-icon' data="{{end:false,url:'../../image/shopping.png', title:'线上购物', width:'33%'}}" />
+    <template is='grid-icon' data="{{end:true,url:'../../image/contact.png', title:'联系客服', width:'33%'}}" />
   </view>
 
-  <view style='height: 80px; background-color: #885'>
+  <view style='background-color: #eed; display: flex; flex-direction: row; '>
     <image src="../../image/Loyal-T-Logo.jpg" style='width: 80px;height: 80px'></image>
-    <text style='margin:20px; position: relative; top: -40px;text-align: center'>不是T贵宾会员？</text>
-    <button size='mini' type='warn' style='position: relative; top: -30px;' bindtap='registerScan'>立即登记</button>
+    <text style='line-height: 80px; margin-left:15px;text-align: center'>不是T贵宾会员？</text>
+    <view style='line-height: 80px; margin-left:15px;text-align: center'>
+      <text style='background-color: #000; color: #fff; padding: 10px 20px 10px 20px' bindtap='registerScan'>立即登记</text>
+    </view>
   </view>
 
 </view>
 
-<template is='tab' data="{{position:'1'}}"/>
+<template is='tab' data="{{position:'1'}}" />
