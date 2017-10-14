@@ -1,62 +1,130 @@
 <form>
-  <image src='http://img.weiye.me/zcimgdir/album/file_59df82b8b9370.png' style="margin-bottom: 15px;height:100px;width:100%;" />
-  <label style="margin: 15px">请填写以下个人信息</label>
-  <view class="page bindPhone-wrap" id="bindPhonePage" data-router="bindPhonePage">
-    <view class="bind-new-tel-wrap">
-      <view class="verify-row" style="border-bottom: none;">
-        <label class="item-name name">姓名</label>
-        <input class="name" bindinput="inputName" placeholder="请输入姓名" />
+  <image src='{{step==1?"http://img.weiye.me/zcimgdir/album/file_59df82b8b9370.png":step==2?"http://img.weiye.me/zcimgdir/album/file_59e02ef36f2f7.png":"http://img.weiye.me/zcimgdir/album/file_59e02ef3ac6be.png"}}' style="margin-bottom: 15px;height:160px;width:100%;"
+  />
+  <view wx:if="{{step==1}}">
+    <label style="margin: 15px">请填写以下个人信息</label>
+    <view class="page bindPhone-wrap" id="bindPhonePage" data-router="bindPhonePage">
+      <view class="bind-new-tel-wrap">
+        <view class="verify-row" style="border-bottom: none;">
+          <label class="item-name name">姓名</label>
+          <input class="name" bindinput="inputName" placeholder="请输入姓名" />
+        </view>
+        <view class="verify-row" style="border-bottom: none;">
+          <label class="item-name name">国家</label>
+          <input class="name" bindinput="inputName" placeholder="请填写居住国家" />
+        </view>
+        <view class="verify-row" style="border-bottom: none;">
+          <label class="item-name name">性别</label>
+          <input class="name" value="{{sex}}" placeholder="" disabled/>
+        </view>
+        <view class="verify-row">
+          <label class="item-name name">邮箱</label>
+          <input class="name" bindinput="inputName" placeholder="请填写Email" />
+        </view>
+        <view class="verify-row" style="border-bottom: none;">
+          <label class="item-name">手机号 +86</label>
+          <input class="code-tel" value='{{verifyPhone}}' bindinput="inputPhone" placeholder="请输入新手机号" />
+        </view>
+        <view class="verify-row">
+          <label class="item-name code">验证码</label>
+          <input class="new-code" bindinput="inputNewCode" placeholder="验证码" />
+          <label class="get-code-btn" bindtap="sendCodeToNewPhone">{{ newCodeStatus }} </label>
+        </view>
+
+        <view class="seperator"></view>
+        <view class="input-item view" wx:if="{{store}}">
+          <label for="store">
+            <span class="labelText">您本次购物的门店</span>
+            <input class="input" id="store" bindinput="inputStore" disabled value="{{store}}"></input>
+          </label>
+        </view>
+        <view class="input-item view" wx:if="{{brand}}">
+          <label for="store">
+            <span class="labelText">您本次所购买的品牌</span>
+            <input class="input" id="brand" bindinput="inputBrand" disabled value="{{brand}}"></input>
+          </label>
+        </view>
+        <view class="input-item view" wx:if="{{channel}}">
+          <label for="store">
+            <span class="labelText">为您结算的通道</span>
+            <input class="input" id="channel" bindinput="inputChannel" disabled value="{{channel}}"></input>
+          </label>
+        </view>
+        <view class='button-group'>
+          <view class="button" bindtap="back" style='background-color: #000;'>返回</view>
+          <view class="button button-second " bindtap="createCard">保存</view>
+        </view>
       </view>
-      <view class="verify-row" style="border-bottom: none;">
-        <label class="item-name name">国家</label>
-        <input class="name" bindinput="inputName" placeholder="请填写居住国家" />
+    </view>
+  </view>
+  <!-- 第二页 -->
+  <view wx:elif="{{step==2}}" class='step2'>
+    <label style="margin: 15px">
+      <span wx:if="{{newCodeBtnDisabled}}">已向您的手机发送一次性验证码,</span>请在下方输入验证码完成验证：</label>
+    <view class="page bindPhone-wrap" id="bindPhonePage" data-router="bindPhonePage">
+      <view class="bind-new-tel-wrap">
+        <view class="verify-row selectBox" style="border-bottom: none;display:block;">
+          <label class="item-name preferred">品牌偏好</label>
+          <picker bindchange="bindBrandChange" value="{{brandSelected}}" range="{{storeArr}}">
+            <view class="picker">
+              {{storeArr[brandSelected]}}
+            </view>
+          </picker>
+        </view>
+        <view class="verify-row selectBox">
+          <label class="item-name preferred">门店偏好</label>
+          <picker bindchange="bindStoreChange" value="{{storeSelected}}" range="{{brandArr}}">
+            <view class="picker">
+              {{brandArr[storeSelected]}}
+            </view>
+          </picker>
+        </view>
+        <view class="verify-row selectBox">
+          <label class="item-name preferred">通信偏好</label>
+          <picker bindchange="bindChannelChange" value="{{channelSelected}}" range="{{channelArr}}">
+            <view class="picker">
+              {{channelArr[channelSelected]}}
+            </view>
+          </picker>
+        </view>
+        <view class="linkCnt" bindtap="backStep">
+          <div class="text-style">更换手机登记</div>
+        </view>
+        <view class="linkCnt second" bindtap="backStep">
+          <div class="text-style">更换邮箱登记</div>
+        </view>
+        <view class='tab-group'>
+          <view class="button" bindtap="backStep" style='background-color: #000;'>返回</view>
+          <view class="button button-second" bindtap="signUpLoyalT">提交信息</view>
+        </view>
       </view>
-      <view class="verify-row" style="border-bottom: none;">
-        <label class="item-name name">性别</label>
-        <input class="name" value="{{sex}}" placeholder="" disabled/>
-      </view>
-      <view class="verify-row">
-        <label class="item-name name">邮箱</label>
-        <input class="name" bindinput="inputName" placeholder="请填写Email" />
-      </view>
-      <view class="verify-row" style="border-bottom: none;">
-        <label class="item-name">手机号 +86</label>
-        <input class="code-tel" value='{{verifyPhone}}' bindinput="inputPhone" placeholder="请输入新手机号" />
-      </view>
-      <view class="verify-row">
-        <label class="item-name code">验证码</label>
-        <input class="new-code" bindinput="inputNewCode" placeholder="验证码" />
-        <label class="get-code-btn" bindtap="sendCodeToNewPhone">{{ newCodeStatus }} </label>
+    </view>
+  </view>
+  <!-- 第三页 -->
+  <view wx:elif="{{step==3}}" id="vipSuccess" class='step2'>
+    <label style="margin: 15px;text-align:center;">
+      您已经成功登记成为T贵宾卡会员,会员卡亦已新增到您的微信卡包。您现在可以于DFS免税店购物并出示条码赚取积分!
+
+    </label>
+
+    <view class="card-wrap" bindtap='redirectDetail'>
+      <navigator url="../vipCardDetail/vipCardDetail" hover-class="navigator-hover">
+        <view class="card" style="background: #fff">
+          <image class="logo" src="..\/..\/image\/Loyal-T-Logo.jpg"></image>
+          <image class="barcode" src="../../image/qr-code-dark.png"></image>
+          <view class="title">DFS免税店</view>
+          <view class="level">T贵宾卡会员</view>
+          <view class="cardno">{{ vipNo }}</view>
+        </view>
+      </navigator>
+    </view>
+    <!-- <view class="blank"></view> -->
+    <view class='tab-group'>
+      <view class="button" bindtap="back" style='background-color: #000;'>
+        <span>返回首页</span>
       </view>
 
-      <view class="seperator"></view>
-      <view class="input-item view"  wx:if="{{store}}">
-        <label for="store">
-          <span class="labelText">您本次购物的门店</span>
-          <input class="input" id="store" bindinput="inputStore" disabled value="{{store}}"></input>
-        </label>
-      </view>
-      <view class="input-item view" wx:if="{{brand}}">
-        <label for="store">
-          <span class="labelText">您本次所购买的品牌</span>
-          <input class="input" id="brand" bindinput="inputBrand" disabled value="{{brand}}"></input>
-        </label>
-      </view>
-      <view class="input-item view" wx:if="{{channel}}">
-        <label for="store">
-          <span class="labelText">为您结算的通道</span>
-          <input class="input" id="channel" bindinput="inputChannel" disabled value="{{channel}}"></input>
-        </label>
-      </view>
-      <!-- 
-    <view class="linkCnt">
-      <navigator url="../registerByEmail/regiterByEmail?name={{name}}" class="navigator-cls" hover-class="navigator-hover">
-      <div class="text-style">使用手机登记</div></navigator>
-    </view> -->
-      <view class='button-group'>
-        <view class="button" bindtap="back" style='background-color: #000;'>返回</view>
-        <view class="button button-second " bindtap="createCard">保存</view>
-      </view>
+      <view class="button button-second" bindtap="viewCard">我的会员卡</view>
     </view>
   </view>
 </form>

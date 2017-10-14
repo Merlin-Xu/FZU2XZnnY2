@@ -25,6 +25,9 @@ Page({
     /*this.setData({
       vipNo: ('940000380058' || 0).toString().replace(/(\d)(?=(?:\d{4})+$)/g, '$1 ')
     })*/
+    this.setData({
+      step: 1
+    })
   },
   inputPhone: function (e) {
     this.setData({
@@ -114,7 +117,7 @@ Page({
     })
   },
   back: function (e) {
-    app.turnToPage('../page10000/page10000', true);
+    app.reLaunch({ url: '../page10000/page10000' });
   },
   nextStep: function (e) {
     console.log("binding");
@@ -216,6 +219,6 @@ Page({
     })
   },
   viewCard: function (e) {
-    app.turnToPage('../page10003/page10003', true);
+    app.reLaunch({ url: '../page10003/page10003' });
   }
 })
