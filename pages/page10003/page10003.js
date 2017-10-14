@@ -344,6 +344,12 @@ var pageData = {
         })
       }
     });
+  },
+
+  tabhome: function(e){
+    wx.navigateBack({
+      delta: 10,
+    })
   }
 };
 Page(pageData);
