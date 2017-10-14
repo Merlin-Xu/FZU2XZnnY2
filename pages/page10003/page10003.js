@@ -370,15 +370,15 @@ var pageData = {
           confirm: function (e) {
             app.turnToPage('../bindForm/bindForm', false);
           }
-        })
+        });
       }
     });
   },
-
   tabhome: function(e){
     wx.navigateBack({
       delta: 10,
     })
   }
+
 };
 Page(pageData);
