@@ -11,7 +11,7 @@
       <text class="{{position=='2'?'text-selected':'text-unselected'}}">二维码</text>
     </view>
 
-    <view class="tab" bindtap='tabmine'>
+    <view class="tab" catchtap="tabmine" data-router="{{!need_login?'userCenter':'page10003'}}">
       <image class="{{position=='3'?'icon icon-selected':'icon icon-unselected'}}" src="../../image/tab_mine.png"></image>
       <text class="{{position=='3'?'text-selected':'text-unselected'}}">我的</text>
     </view>

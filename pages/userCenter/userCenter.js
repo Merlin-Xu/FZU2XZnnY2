@@ -12,24 +12,24 @@ Page({
     isFromBack: false,
     phone: ''
   },
-  onLoad: function(){
+  onLoad: function () {
     var userInfo = app.getUserInfo(),
-        phone = userInfo.phone,
-        data = {
-              'userInfo.nickname': userInfo.nickname,
-              'userInfo.sex': userInfo.sex,
-              'userInfo.cover_thumb': userInfo.cover_thumb
-            };
+      phone = userInfo.phone,
+      data = {
+        'userInfo.nickname': userInfo.nickname,
+        'userInfo.sex': userInfo.sex,
+        'userInfo.cover_thumb': userInfo.cover_thumb
+      };
 
-    if(phone){
+    if (phone) {
       data.phone = phone;
     }
     this.setData(data);
   },
-  onShow: function(){
-    if(this.data.isFromBack){
+  onShow: function () {
+    if (this.data.isFromBack) {
       var phone = app.getUserInfo().phone;
-      if(phone){
+      if (phone) {
         this.setData({
           phone: phone
         })
@@ -40,40 +40,40 @@ Page({
       });
     }
   },
-  choosePhoto: function(){
+  choosePhoto: function () {
     var that = this;
-    app.chooseImage(function(imgUrl){
+    app.chooseImage(function (imgUrl) {
       that.setData({
         'userInfo.cover_thumb': imgUrl
       })
     });
   },
-  changeGender: function(e){
+  changeGender: function (e) {
     this.setData({
       'userInfo.sex': e.detail.value
     })
   },
-  inputNickname: function(e){
+  inputNickname: function (e) {
     this.setData({
       'userInfo.nickname': e.detail.value
     })
   },
-  saveUserInfo: function(){
+  saveUserInfo: function () {
     var data = this.data.userInfo;
 
     app.sendRequest({
       url: '/index.php?r=AppData/saveUserInfo',
       method: 'post',
       data: data,
-      success: function(res){
-        if(res.status === 0){
+      success: function (res) {
+        if (res.status === 0) {
           app.setUserInfoStorage(data);
           app.turnBack();
         }
       }
     });
   },
-  bindCellphonePage: function(){
+  bindCellphonePage: function () {
     app.turnToPage('/pages/bindCellphone/bindCellphone');
   }
 

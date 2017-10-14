@@ -1,7 +1,19 @@
 <import src='../../utils/tab.wxml'/>
 <import src='../../utils/grid_icon.wxml'/>
 <view style='padding-bottom: 50px'>
-  <image src="../../image/cardface.jpg" style='width:100%;'></image>
+  <!-- <image src="../../image/cardface.jpg" style='width:100%;'></image> -->
+<template name="zcCarousel">
+  <swiper class="swiper" indicator-dots="true" circular="true" autoplay="true" interval="2000" duration="750">
+    <block wx:for="{{data.content}}" wx:key="">
+      <swiper-item>
+        <image class="swiper-item" src="{{item.pic}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
+<view class="ele-container">
+  <template is="zcCarousel" data="{{data:carousel}}"></template>
+</view>
   <view style='background-color: #f51; text-align: center; padding: 10px;margin-top:-6px;'>
     <text style='color: #fff; display: block; margin-bottom: 5px;'>绑定T贵宾卡账户，随时随地享受优惠</text>
     <text style='color: #fff; border-bottom: 1px solid #fff;' bindtap='bindLoyalT'>立即绑定</text>
