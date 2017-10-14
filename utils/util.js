@@ -41,7 +41,7 @@ function isEmail(str){
 }
 
 function isloyalT(str){
-  return /^E[0 - 9]{6 }/.test(str);  
+  return /^E[0-9]{7}/.test(str);  
 }
 module.exports = {
   formatTime: formatTime,

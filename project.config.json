@@ -11,20 +11,21 @@
 	"appid": "wx88e77906e90fa375",
 	"projectname": "DFS%E5%B0%8F%E7%A8%8B%E5%BA%8F",
 	"appsceret": "6b16467581a2f0b57df80d336efdfb21",
+	"miniprogramRoot": "./",
 	"condition": {
 		"weapp": {
-			"current": -1,
+			"current": 1,
 			"list": [
-				{
-					"id": 0,
-					"name": "register",
-					"pathName": "pages/registerByEmail/regiterByEmail",
-					"query": ""
-				},
 				{
 					"id": -1,
 					"name": "register",
 					"pathName": "pages/registerForm/registerForm",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "bind",
+					"pathName": "pages/bindForm/bindForm",
 					"query": ""
 				}
 			]
