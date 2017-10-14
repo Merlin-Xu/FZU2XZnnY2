@@ -1,5 +1,5 @@
 <import src='../tab.wxml'/>
-<view>
+<view style='padding-bottom: 50px'>
   <image src="../../image/cardface.jpg"></image>
 
   <view style='background-color: #f51; text-align: center; padding: 10px'>
