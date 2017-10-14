@@ -1,4 +1,4 @@
-<image src='{{step==1?"http://img.weiye.me/zcimgdir/album/file_59e02e5f1c5d0.png":step==2?"http://img.weiye.me/zcimgdir/album/file_59e02e5f07c02.png":"http://img.weiye.me/zcimgdir/album/file_59e02e5f329be.png"}}' style="margin-bottom: 15px;width:100%;"
+<image src='{{step==1?"http://img.weiye.me/zcimgdir/album/file_59e02e5f1c5d0.png":step==2?"http://img.weiye.me/zcimgdir/album/file_59e02e5f07c02.png":"http://img.weiye.me/zcimgdir/album/file_59e02e5f329be.png"}}' style="margin-bottom: 15px;width:100%;height:160px;"
 />
 <form class="step1">
   <!-- 第一页 -->
@@ -24,13 +24,14 @@
       <input class="input" bindinput="inputLastName" value="{{lastName}}" placeholder="您的姓名"></input>
     </view>
 
-    <view class='button-group'>
+    <view class='tab-group'>
       <view class="button" bindtap="back" style='background-color: #000;'>返回
       </view>
       <view class="button button-second" bindtap="nextStep">立即绑定
       </view>
     </view>
   </view>
+  <!-- 第二页 -->
   <view wx:elif="{{step==2}}" class='step2'>
     <label style="margin: 15px">
       <span wx:if="{{newCodeBtnDisabled}}">已向您的手机发送一次性验证码,</span>请在下方输入验证码完成验证：</label>
@@ -51,38 +52,38 @@
         <view class="linkCnt second" bindtap="backStep">
           <div class="text-style">更换邮箱登记</div>
         </view>
-        <view class='button-group'>
+        <view class='tab-group'>
           <view class="button" bindtap="backStep" style='background-color: #000;'>返回</view>
-          <view class="button button-second" bindtap="bindLoyalT">保存</view>
+          <view class="button button-second" bindtap="bindLoyalT">快速验证</view>
         </view>
       </view>
     </view>
   </view>
-  <!-- 第二页 -->
-  <view wx:elif="{{step==2}}" class='step2'>
-    <label style="margin: 15px">
-      <span wx:if="{{newCodeBtnDisabled}}">已向您的手机发送一次性验证码,</span>请在下方输入验证码完成验证：</label>
-    <view class="page bindPhone-wrap" id="bindPhonePage" data-router="bindPhonePage">
-      <view class="bind-new-tel-wrap">
-        <view class="verify-row disable" style="border-bottom: none;">
-          <label class="item-name">手机号</label>
-          <input class="code-tel" value='{{verifyPhone}}' disabled/>
+  <!-- 第三页 -->
+  <view wx:elif="{{step==3}}" id="vipSuccess" class='step2'>
+    <label style="margin: 15px;text-align:center;">
+      您的T贵宾卡已成功与微信绑定并新增到您微信卡包。您现在可以于DFS免税店购物并出示条码赚取积分!
+
+    </label>
+
+    <view class="card-wrap" bindtap='redirectDetail'>
+      <navigator url="../vipCardDetail/vipCardDetail" hover-class="navigator-hover">
+        <view class="card" style="background: #fff">
+          <image class="logo" src="..\/..\/image\/Loyal-T-Logo.jpg"></image>
+          <image class="barcode" src="../../image/qr-code-dark.png"></image>
+          <view class="title">DFS免税店</view>
+          <view class="level">T贵宾卡会员</view>
+          <view class="cardno">{{ vipNo }}</view>
         </view>
-        <view class="verify-row">
-          <label class="item-name code">验证码</label>
-          <input class="new-code" bindinput="inputNewCode" placeholder="验证码" />
-          <label class="get-code-btn" bindtap="sendCodeToNewPhone">{{ newCodeStatus }} </label>
-        </view>
-        <view class="linkCnt">
-          <navigator url="../registerByEmail/regiterByEmail?name={{name}}" class="navigator-cls" hover-class="navigator-hover">
-            <div class="text-style">使用手机登记</div>
-          </navigator>
-        </view>
-        <view class='button-group'>
-          <view class="button" bindtap="backStep" style='background-color: #000;'>返回</view>
-          <view class="button button-second" bindtap="createCard">保存</view>
-        </view>
+      </navigator>
+    </view>
+<!-- <view class="blank"></view> -->
+    <view class='tab-group'>
+      <view class="button" bindtap="back" style='background-color: #000;'>
+        <span>返回首页</span>
       </view>
+
+      <view class="button button-second" bindtap="viewCard">我的会员卡</view>
     </view>
   </view>
 </form>

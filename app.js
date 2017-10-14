@@ -232,14 +232,6 @@ App({
       complete: options.complete
     })
   },
-  reLaunch: function (options) {
-    wx.reLaunch({
-      url: options.url,
-      success: options.success,
-      fail: options.fail,
-      complete: options.complete
-    })
-  },
   switchToTab: function (url) {
     wx.switchTab({
       url: url

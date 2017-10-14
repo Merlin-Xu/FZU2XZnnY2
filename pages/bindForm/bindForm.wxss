@@ -17,12 +17,13 @@ page {
   margin: 10px 12px;
   border: 1px solid #d8d8d8;
   border-radius: 6px;
+  position: relative;
 }
 .verify-row .icon-right{
   position: absolute;
   border-left: 1px solid #d8d8d8;
   right: 25px;
-  top: 50%;
+  top: 10px;
   margin-top: 3px;
   width: 20px;
   height: 20px;
@@ -93,26 +94,22 @@ page {
   text-align: center;
   border: 1px solid;
 }
-
+.tab-group{
+  display: table;
+  text-align: center;
+}
  .button{
-  height:150rpx;
-  line-height: 150rpx;
+   display: table-cell;
   color: #fff;
   text-align: center;
+  height: 150rpx;
+  line-height: 150rpx;
   width: 50%;
-}
-
-.button-group {
-  /* position: fixed; */
-  bottom: 0px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
 }
 
 .button-second {
   background-color: #f00;
-  left: 50%;
+  width: 50%;
 }
 .disable{
   background: #f2f2f2;
@@ -137,4 +134,68 @@ page {
   text-decoration: none;
   background: transparent;
   border-bottom: 1px solid #333;
+}
+
+#vipSuccess .card-wrap {
+  height: 210px;
+  padding-top:30px;
+  /* border-bottom:1px solid #dcdcdc; */
+  margin-bottom: 40px;
+}
+#vipSuccess .blank{
+  height: 20px;
+}
+#vipSuccess .card-wrap .card {
+  height: 180px;
+  width: 84%;
+  background: rgb(61, 183, 248);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  background-size: 100% 100%;
+}
+#vipSuccess .card .logo {
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  position: absolute;
+  left: 20px;
+  top: 25px;
+}
+#vipSuccess .card .barcode {
+  height: 25px;
+  width: 25px;
+  overflow: hidden;
+  position: absolute;
+  right: 20px;
+  top: 35px;
+}
+#vipSuccess .card .title {
+  position: absolute;
+  top: 25px;
+  left: 80px;
+  font-size: 18px;
+  color: #222;
+}
+#vipSuccess .card .level {
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  font-size: 12px;
+  color: #222;
+}
+#vipSuccess .card .cardno {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #222;
+  letter-spacing: 4px;
+  /* text-shadow:1px 0 #eee,0 -1px #eee, 1px 0 #333,0 1px #333; */
+}
+#vipSuccess .card .duration {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #222;
 }

@@ -6,7 +6,8 @@ Page({
     verifyPhone: '',
     vipCardNo: '',
     lastName: '',
-    step: 2,
+    vipNo: '',
+    step: 1,
     newCode: '',
     newCodeBtnDisabled: false,
     newCodeStatus: '获取验证码',
@@ -21,6 +22,9 @@ Page({
         verifyPhone: userInfo.phone
       })
     }
+    /*this.setData({
+      vipNo: ('940000380058' || 0).toString().replace(/(\d)(?=(?:\d{4})+$)/g, '$1 ')
+    })*/
   },
   inputPhone: function (e) {
     this.setData({
@@ -68,6 +72,7 @@ Page({
         code: newCode
       },
       success: function (res) {
+        console.log(res);
         app.setUserInfoStorage({
           phone: verifyPhone
         });
@@ -77,8 +82,14 @@ Page({
         if (verifyEmail)
           app.setStorage({ key: "email", data: verifyEmail });
         app.setStorage({ key: "lastName", data: lastName });
+        that.setData({
+          step: 3,
+          vipNo: (vipCardNo || 0).toString().replace(/(\d)(?=(?:\d{4})+$)/g, '$1 ')
+        });
+
       },
       fail: function (res) {
+        console.log("failed");
         app.showModal({
           content: '绑定失败' + res.data
         })
@@ -87,22 +98,6 @@ Page({
         that.setData({
           bindNewPhoneBtnDisabled: false
         })
-      }
-    });
-
-
-
-    app.showToast({
-      title: '绑定成功',
-      icon: 'success',
-      success: function () {
-        app.setStorage({ key: "vipNo", data: vipCardNo });
-        if (verifyPhone)
-          app.setStorage({ key: "phone", data: verifyPhone });
-        if (verifyEmail)
-          app.setStorage({ key: "email", data: verifyEmail });
-        app.setStorage({ key: "lastName", data: lastName });
-        app.turnToPage('../vipCard/vipCard?cardNo=' + vipCardNo, true);
       }
     });
   },
@@ -119,7 +114,7 @@ Page({
     })
   },
   back: function (e) {
-    app.turnBack();
+    app.turnToPage('../page10000/page10000', true);
   },
   nextStep: function (e) {
     console.log("binding");
@@ -211,12 +206,6 @@ Page({
             second--;
           }
         }, 1000);
-      },
-      complete: function () {
-        that.setData({
-          newCodeStatus: '获取验证码',
-          newCodeBtnDisabled: false
-        })
       }
     })
   },
@@ -225,5 +214,8 @@ Page({
     this.setData({
       step: 1
     })
+  },
+  viewCard: function (e) {
+    app.turnToPage('../page10003/page10003', true);
   }
 })

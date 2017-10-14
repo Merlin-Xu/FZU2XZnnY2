@@ -77,15 +77,21 @@ Page({
 
   },
   tabmine: function (e) {
-    let session_key = app.getSessionKey(),
-      userInfo = app.getUserInfo();
-    console.log(this.data.need_login + session_key + userInfo);
-    if (!session_key || !userInfo) {
-      this.setData({ need_login: false });
+    let userInfo = app.getUserInfo();
+    if (Object.keys(userInfo).length == 0 ) {
+      app.goLogin({
+        success: function () {
+          if (app.isLogin() !== true) {
+            app.turnToPage('../page10003/page10003', false);
+          }else{
+            app.turnToPage('/pages/userCenter/userCenter?from=userCenterEle');
+          }
+        }
+      });
     } else {
-      this.setData({ need_login: true });
+      app.turnToPage('../page10003/page10003', false);
     }
-    app.userCenterTurnToPage(e);
+
 
   }
 });
