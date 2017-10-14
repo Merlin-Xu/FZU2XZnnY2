@@ -16,7 +16,7 @@
   </view>
 
   <view style='padding: 0px 10px 0px 10px'>
-    <view class='grid-row' style='border-bottom: 1px solid #bbb'>
+    <view class='grid-row' style='border-bottom: 1px solid #ddd'>
       <template is='grid-icon' data="{{end:false,url:'../../image/coupon.png', title:'卡券', width:'50%'}}"/>
       <template is='grid-icon' data="{{end:true,url:'../../image/user.png', title:'会员信息', width:'50%'}}"/>
     </view>
@@ -26,6 +26,17 @@
       <template is='grid-icon' data="{{end:true,url:'../../image/order.png', title:'购物记录', width:'50%'}}"/>
     </view>
   </view>
+</view>
+
+<view style='position: fixed; top: 0px; display: flex; flex-direction: row; padding: 10px'>
+  <image style='width: 24px; height: 24px; padding-right: 5px' src="../../image/user_circle.png"></image>
+  <text style='color:#fff; font-size: 16px; border-bottom: 1px solid #fff;'>{{userName}}</text>
+</view>
+
+<view style='position: fixed; top: 0px; right: 0px; display: flex; flex-direction: column; padding: 10px; text-align: center'>
+  <image style='width: 60px; height: 24px; padding-right: 5px; background-color: #fff; padding:10px;' 
+  mode='aspectFit' src="../../image/Loyal-T-Logo.jpg"></image>
+  <text style='color:#ddd; font-size: 10px'>{{cardNo}}</text>
 </view>
 
 <template is='tab' data="{{position:'3'}}"/>
