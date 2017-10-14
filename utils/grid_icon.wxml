@@ -1,0 +1,6 @@
+<template name='grid-icon'>
+  <view class="{{end==true?'grid-icon':'grid-icon no-end'}}" style='width: {{width}}'>
+    <image class='icon' mode='aspectFit' src='{{url}}'></image>
+    <text class='title'>{{title}}</text>
+  </view>
+</template>
