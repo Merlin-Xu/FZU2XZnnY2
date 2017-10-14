@@ -1,9 +1,30 @@
 <import src='../../utils/tab.wxml'/>
 <import src='../../utils/grid_icon.wxml'/>
+
 <view>
-  <image src='../../image/cardface.jpg' style='height: 50%'></image>
-  <view>
-    <template is='grid-icon' data="{{url:'../../image/coupon.png', title:'sss'}}"/>
+  <template name="zcCarousel">
+    <swiper indicator-dots="true" circular="true" autoplay="{{data.customFeature.autoplay}}" vertical="{{data.customFeature.vertical}}" interval="{{data.customFeature.interval*1000}}" duration="750" style="{{data.style}}">
+      <block wx:for="{{data.content}}" wx:key="">
+        <swiper-item data-event-params="{{item.eventParams}}" catchtap="{{item.eventHandler}}">
+          <image class="swiper-item" src="{{item.pic}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </template>
+  <view class="ele-container">
+    <template is="zcCarousel" data="{{data:carousel1}}"></template>
+  </view>
+
+  <view style='padding: 0px 10px 0px 10px'>
+    <view class='grid-row' style='border-bottom: 1px solid #bbb'>
+      <template is='grid-icon' data="{{end:false,url:'../../image/coupon.png', title:'卡券', width:'50%'}}"/>
+      <template is='grid-icon' data="{{end:true,url:'../../image/user.png', title:'会员信息', width:'50%'}}"/>
+    </view>
+
+    <view class='grid-row'>
+      <template is='grid-icon' data="{{end:false,url:'../../image/gift.png', title:'会员奖赏', width:'50%'}}"/>
+      <template is='grid-icon' data="{{end:true,url:'../../image/order.png', title:'购物记录', width:'50%'}}"/>
+    </view>
   </view>
 </view>
 

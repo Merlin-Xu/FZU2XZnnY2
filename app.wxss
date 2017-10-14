@@ -3924,7 +3924,7 @@ a {
 }
 
 .grid-icon.no-end{
-   border-right: 1px solid #bbb;
+   border-right: 1px solid #ddd;
 }
 
 .grid-icon .icon{

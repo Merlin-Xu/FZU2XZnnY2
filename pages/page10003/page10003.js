@@ -1,7 +1,34 @@
 var app      = getApp();
 
 var pageData = {
-  data: {"user_center1":{"type":"user-center","style":"opacity:1;color:rgb(255, 255, 255);margin-top:0;font-size:37.5rpx;height:auto;margin-left:auto;","content":"","customFeature":{"mode":1,"with-horizontal":true,"topSectionStyle":{"background-color":"","background-image":"url(http:\/\/cdn.jisuapp.cn\/zhichi_frontend\/static\/webapp\/images\/top_bg.jpg)"},"appendComponentAttr":{"myAddress":{"margin-top":"-1px","openVerifyPhone":false},"myOrder":{"margin-top":"-1px","openVerifyPhone":false},"shoppingCart":{"margin-top":"-1px","openVerifyPhone":false},"myMessage":{"margin-top":"-1px","openVerifyPhone":false},"vipCard":{"margin-top":"-1px","openVerifyPhone":false},"coupon":{"margin-top":"-1px","openVerifyPhone":false},"myIntegral":{"margin-top":"-1px","openVerifyPhone":false},"balance":{"margin-top":"-1px","openVerifyPhone":false},"myGroup":{"margin-top":"-1px","openVerifyPhone":false},"winningRecord":{"margin-top":"-1px","openVerifyPhone":false}},"appendComponent":["vipCard","coupon"]},"animations":[],"page_form":"","compId":"user_center1","parentCompid":"user_center1"},"has_tabbar":0,"page_hidden":true,"page_form":""},
+  data: {
+    "carousel1": {
+      "type": "carousel",
+      "style": "opacity:1;margin-left:auto;",
+      "content": [
+        {
+          "pic": "http://img.weiye.me/zcimgdir/album/file_5721778f3f244.jpg",
+          "customFeature": [],
+          "content": "",
+          "parentCompid": "carousel1",
+          "style": ""
+        },
+        {
+          "pic": "http://img.weiye.me/zcimgdir/album/file_5721778eeba97.jpg",
+          "customFeature": [],
+          "content": "",
+          "parentCompid": "carousel1",
+          "style": ""
+        }
+      ],
+      "customFeature": {
+        "carouselgroupId": null
+      },
+      "animations": [],
+      "page_form": "",
+      "compId": "carousel1"
+    }
+  },
     need_login: false,
     page_router: 'page10003',
     page_form: 'none',
