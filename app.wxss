@@ -3877,8 +3877,10 @@ a {
   background-color: #fff;
   bottom: 0px;
   width: 100%;
+  position: fixed;
   display: flex;
   flex-direction: row;
+  border-top: 1px solid #bbb;
 }
 .tab{
   width: 33%;
@@ -3886,12 +3888,31 @@ a {
   height: 50px;
   text-align: center;
   position: relative; 
+  display: flex;
+  flex-direction: row;
 }
 
-.tab .selected{
+.tab .text-selected{
   color: #f00;
 }
 
-.tab .unselected{
+.tab .text-unselected{
   color: #000;
+}
+
+.tab .icon{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 15px;
+  border-right: 20px solid transparent;
+}
+
+.tab .icon-selected{
+  filter: drop-shadow(20px 0px 0px #f00);
+}
+
+.tab .icon-unselected{
+  filter: drop-shadow(20px 0px 0px #000);
 }

@@ -1,5 +1,5 @@
 <import src='../tab.wxml'/>
-<view>
+<view style='padding-bottom: 50px'>
   <image src="../../image/cardface.jpg" style='width:100%;'></image>
   <view style='background-color: #f51; text-align: center; padding: 10px;margin-top:-6px;'>
     <text style='color: #fff; display: block; margin-bottom: 5px;'>绑定T贵宾卡账户，随时随地享受优惠</text>
