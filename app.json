@@ -19,7 +19,8 @@
     "pages/transferPaySuccess/transferPaySuccess",
     "pages/bindForm/bindForm",
     "pages/registerForm/registerForm",
-    "pages/vipCardDetail/vipCardDetail"
+    "pages/vipCardDetail/vipCardDetail",
+    "pages/userInfo/userInfo"
   ],
   "window": {
     "enablePullDownRefresh": false

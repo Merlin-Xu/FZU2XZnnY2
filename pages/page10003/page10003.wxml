@@ -52,7 +52,7 @@
   <view style='padding: 0px 10px 0px 10px'>
     <view class='grid-row' style='border-bottom: 1px solid #ddd'>
       <template is='grid-icon' data="{{end:false,url:'../../image/coupon.png', title:'卡券', width:'50%',userCenterTurnToPage:'userCenterTurnToPage',router:'couponList'}}" />
-      <template is='grid-icon' data="{{end:true,url:'../../image/user.png', title:'会员信息', width:'50%',userCenterTurnToPage:'showModal'}}" />
+      <template is='grid-icon' data="{{end:true,url:'../../image/user.png', title:'会员信息', width:'50%',userCenterTurnToPage:'tapUserInfo'}}" />
     </view>
 
     <view class='grid-row'>

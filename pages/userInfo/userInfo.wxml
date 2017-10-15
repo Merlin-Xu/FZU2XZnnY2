@@ -1,0 +1,70 @@
+<!--pages/userInfo/userInfo.wxml-->
+<view style='width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;'>
+  <image style='width: 36px; height: 36px; border: 1px solid #ddd; border-radius: 50px; padding: 15px; margin-top: 10px;' src="../../image/Loyal-T-Logo.jpg"></image>
+  <text style='font-size: 22px; margin-bottom: 5px'>{{userName}}</text>
+  <text style='color: #bbb; margin-bottom: 8px'>{{cardId}}</text>
+</view>
+
+<view style='background-color:#ddd; padding: 10px'>
+  <text style='color: #aaa; font-size: 10px; margin-bottom: 8px'>个人信息</text>
+
+  <view class="verify-row" style="border-bottom: none;">
+      <label class="item-name">生日</label>
+      <text class="code-tel">{{birthday}}</text>
+  </view>
+
+  <view class="verify-row" style="border-bottom: none;">
+      <label class="item-name">性别</label>
+      <text class="code-tel">{{gender}}</text>
+  </view>
+
+  <view class="verify-row" style="border-bottom: none;">
+      <label class="item-name">邮箱</label>
+      <text class="code-tel">{{email}}</text>
+      <text class="icon-right">></text>
+  </view>
+
+  <view class="verify-row" style="border-bottom: none;">
+      <label class="item-name">住址</label>
+      <text class="code-tel">{{addr}}</text>
+      <text class="icon-right">></text>
+  </view>
+
+  <view class="verify-row" style="border-bottom: none;">
+      <label class="item-name">国家</label>
+      <text class="code-tel">{{country}}</text>
+      <text class="icon-right">></text>
+  </view>
+
+  <view class="verify-row" style="border-bottom: none;">
+      <label class="item-name">手机号  +86</label>
+      <text class="code-tel">{{phone}}</text>
+      <text class="icon-right">></text>
+  </view>
+
+  <text style='color: #aaa; font-size: 10px; margin-bottom: 8px'>偏好设定</text>
+
+  <view class="verify-row" style="border-bottom: none;">
+      <label class="item-name">语言</label>
+      <text class="code-tel">{{language}}</text>
+      <text class="icon-right">></text>
+  </view>
+
+  <view class="verify-row" style="border-bottom: none;">
+      <label class="item-name">品牌偏好</label>
+      <text class="code-tel">{{brand}}</text>
+      <text class="icon-right">></text>
+  </view>
+
+  <view class="verify-row" style="border-bottom: none;">
+      <label class="item-name">门店偏好</label>
+      <text class="code-tel">{{store}}</text>
+      <text class="icon-right">></text>
+  </view>
+
+  <view class="verify-row" style="border-bottom: none;">
+      <label class="item-name">通信偏好</label>
+      <text class="code-tel">{{contact}}</text>
+      <text class="icon-right">></text>
+  </view>
+</view>

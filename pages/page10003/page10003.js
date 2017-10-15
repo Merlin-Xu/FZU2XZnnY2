@@ -222,6 +222,12 @@ var pageData = {
         animationShowWidth = res.windowWidth;
       }
     })
+  },
+
+  tapUserInfo: function(e){
+    wx.navigateTo({
+      url: '../userInfo/userInfo',
+    })
   }
 };
 Page(pageData);
