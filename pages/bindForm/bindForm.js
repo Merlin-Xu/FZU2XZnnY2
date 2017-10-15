@@ -109,10 +109,16 @@ Page({
     app.scanCode({
       onlyFromCamera: true,
       success: (res) => {
-        console.log(res.result)
-        this.setData({
-          vipCardNo: res.result
-        })
+        console.log(res.result);
+        if (util.isloyalT(res.result)) {
+          this.setData({
+            vipCardNo: res.result
+          })
+        } else {
+          app.showModal({
+            content: '卡号格式不正确'
+          })
+        }
       }
     })
   },
