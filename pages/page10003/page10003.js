@@ -4,21 +4,40 @@ var pageData = {
   data: {
     "carousel1": {
       "type": "carousel",
-      "style": "opacity:1;margin-left:auto;",
+      "style": "height: 240px; opacity:1;margin-left:auto; background-image: url(../../image/cardface.jpg)",
       "content": [
         {
-          "pic": "http://img.weiye.me/zcimgdir/album/file_5721778f3f244.jpg",
           "customFeature": [],
           "content": "",
           "parentCompid": "carousel1",
-          "style": ""
+          "style": "",
+          "circleId": "circle1",
+          "title": "总消费",
+          "detail": "年度总消费",
+          "count": "694",
+          "fontColor": "#0bb"
         },
         {
-          "pic": "http://img.weiye.me/zcimgdir/album/file_5721778eeba97.jpg",
           "customFeature": [],
           "content": "",
-          "parentCompid": "carousel1",
-          "style": ""
+          "parentCompid": "carousel2",
+          "style": "",
+          "circleId": "circle2",
+          "title": "等级金额",
+          "detail": "升级至翡翠卡会籍之等级金额",
+          "count": "2500",
+          "fontColor": "#fc5"
+        },
+        {
+          "customFeature": [],
+          "content": "",
+          "parentCompid": "carousel3",
+          "style": "",
+          "circleId": "circle3",
+          "title": "积分结余",
+          "detail": "300积分将于2019年12月到期",
+          "count": "1300",
+          "fontColor": "#e37"
         }
       ],
       "customFeature": {
@@ -379,6 +398,33 @@ var pageData = {
     wx.navigateBack({
       delta: 10,
     })
+  },
+
+  drawCircle: function (id, color, arc) {
+    var context = wx.createCanvasContext(id)
+    context.setStrokeStyle(color)
+    context.setLineWidth(4)
+    context.arc(75, 75, 73, Math.PI / 2, arc, false)
+    context.stroke()
+    context.draw()
+  },
+
+  onReady: function(){
+    this.drawCircle('circle1', "#00b0b0", Math.PI * 5 / 2)
+  },
+
+  swipe: function(e){
+    switch (e.detail.current){
+      case 0:
+        this.drawCircle('circle1', "#00b0b0", Math.PI * 5 / 2)
+        break
+      case 1:
+        this.drawCircle('circle2', "#f0c050", Math.PI * 3 / 2)
+        break
+      case 2:
+        this.drawCircle('circle3', "#e03070", Math.PI * 5 / 2)
+        break
+    }
   }
 };
 Page(pageData);

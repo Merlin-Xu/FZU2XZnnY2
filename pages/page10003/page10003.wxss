@@ -3,3 +3,12 @@
   flex-direction: row;
   padding: 20px 0px 20px 0px;
 }
+
+.circle-title{
+  font-size: 16px; 
+  margin-bottom: 5px;
+}
+
+.circle-count{
+  font-size: 24px; 
+}

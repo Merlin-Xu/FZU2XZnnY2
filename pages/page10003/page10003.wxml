@@ -3,10 +3,19 @@
 
 <view>
   <template name="zcCarousel">
-    <swiper indicator-dots="true" circular="true" autoplay="{{data.customFeature.autoplay}}" vertical="{{data.customFeature.vertical}}" interval="{{data.customFeature.interval*1000}}" duration="750" style="{{data.style}}">
+    <swiper indicator-dots="true" indicator-active-color="#fff" circular="true" autoplay="{{data.customFeature.autoplay}}" vertical="{{data.customFeature.vertical}}" interval="{{data.customFeature.interval*1000}}" duration="750" style="{{data.style}}" bindchange='swipe'>
       <block wx:for="{{data.content}}" wx:key="">
         <swiper-item data-event-params="{{item.eventParams}}" catchtap="{{item.eventHandler}}">
-          <image class="swiper-item" src="{{item.pic}}" />
+          <view style='position: fixed; width: 100%; height: 100%;display: flex; align-items: center; justify-content: center;'>
+            <canvas style='width: 150px; height: 150px;' canvas-id='{{item.circleId}}'></canvas>
+          </view>
+          <view style='position: fixed; width: 100%; height: 100%;display: flex; align-items: center; justify-content: center; flex-direction: column;'>
+            <text class='circle-title' style='color:{{item.fontColor}}'>{{item.title}}</text>
+            <view style='width: 120px; text-align: center'>
+              <text style='color: #fff; margin-bottom: 5px;'>{{item.detail}}</text>
+            </view>
+            <text class='circle-count' style='color:{{item.fontColor}}'>{{item.count}}</text>
+          </view>
         </swiper-item>
       </block>
     </swiper>
