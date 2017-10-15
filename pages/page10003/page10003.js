@@ -15,7 +15,7 @@ var pageData = {
     },
     "carousel1": {
       "type": "carousel",
-      "style": "height: 240px; opacity:1;margin-left:auto; background-image: url(../../image/cardface.jpg)",
+      "style": "",
       "content": [
         {
           "customFeature": [],

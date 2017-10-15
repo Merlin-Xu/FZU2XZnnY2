@@ -4,14 +4,22 @@
   padding: 20px 0px 20px 0px;
 }
 
-
-.circle-title{
-  font-size: 16px; 
+.swiper {
+  height: 240px;
+  opacity: 1;
+  margin-left: auto;
+  background-image: url(http://img.weiye.me/zcimgdir/album/file_59df829adb9d6.jpg);
+}
+.swiper-block{
+  background: rgba(0, 0, 0, 0.8);
+}
+.circle-title {
+  font-size: 16px;
   margin-bottom: 5px;
 }
 
-.circle-count{
-  font-size: 24px; 
+.circle-count {
+  font-size: 24px;
 }
 
 .buydes-dialog-container {
@@ -120,7 +128,7 @@
 }
 
 .buydes-dialog-container-bottom .barcode {
-  width:78%;
+  width: 78%;
   height: 100px;
   vertical-align: middle;
   padding: 4%;
@@ -144,4 +152,3 @@
   color: #fff;
   border: none;
 }
-

@@ -28,9 +28,9 @@
 <import src='../../utils/grid_icon.wxml' />
 <view>
   <template name="zcCarousel">
-    <swiper indicator-dots="true" indicator-active-color="#fff" circular="true" autoplay="{{data.customFeature.autoplay}}" vertical="{{data.customFeature.vertical}}" interval="{{data.customFeature.interval*1000}}" duration="750" style="{{data.style}}" bindchange='swipe'>
-      <block wx:for="{{data.content}}" wx:key="">
-        <swiper-item data-event-params="{{item.eventParams}}" catchtap="{{item.eventHandler}}">
+    <swiper indicator-dots="true" indicator-active-color="#fff" circular="true" autoplay="{{data.customFeature.autoplay}}" vertical="{{data.customFeature.vertical}}" interval="{{data.customFeature.interval*1000}}" duration="750" class="swiper" bindchange='swipe'>
+      <block wx:for="{{data.content}}" wx:key="" >
+        <swiper-item class="swiper-block" data-event-params="{{item.eventParams}}" catchtap="{{item.eventHandler}}">
           <view style='position: fixed; width: 100%; height: 100%;display: flex; align-items: center; justify-content: center;'>
             <canvas style='width: 150px; height: 150px;' canvas-id='{{item.circleId}}'></canvas>
           </view>
