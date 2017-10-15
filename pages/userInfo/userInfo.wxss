@@ -1,0 +1,204 @@
+/* pages/userInfo/userInfo.wxss */
+page {
+  background-color: #efeff4;
+  color: #000;
+}
+
+/* input::-webkit-input-placeholder {
+  color: #000;
+ } */
+
+.bindPhone-wrap {
+  padding-top: 20px;
+}
+
+.verify-row {
+  padding: 10px 0;
+  background-color: #fff;
+  margin: 10px 12px;
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+  position: relative;
+}
+.verify-row .icon-right{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  margin-top: 0px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  color: #aaa;
+  font-size: 20px;
+}
+
+.item-name {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30%;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.item-name.code, .item-name.name {
+  width: 20%;
+}
+
+ input {
+  display: inline-block;
+  width: 60%;
+  margin-right: 2%;
+  height: 20px;
+  line-height: 20px;
+  /* padding: 4px; */
+  font-size: 14px;
+  color: #646464;
+  vertical-align: middle;
+} 
+
+.code-tel {
+  width: 60%;
+  color: #aaa;
+}
+
+.new-code {
+  width: 40%;
+}
+
+.option-btn {
+  display: block;
+  width: 90%;
+  line-height: 40px;
+  margin: 20px auto;
+  color: #fff;
+  background-color: #09bb07;
+  border: 1px solid #029400;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.bind-new-tel-btn {
+  opacity: 1;
+}
+
+.bind-new-tel-btn.disabled {
+  opacity: 0.4;
+}
+
+.get-code-btn {
+  display: inline-block;
+  width: 25%;
+  line-height: 20px;
+  padding: 4px 0;
+  font-size: 12px;
+  vertical-align: middle;
+  color: #09bb07;
+  background-color: #fff;
+  text-align: center;
+  border: 1px solid;
+}
+.tab-group{
+  display: table;
+  text-align: center;
+}
+ .button{
+   display: table-cell;
+  color: #fff;
+  text-align: center;
+  height: 150rpx;
+  line-height: 150rpx;
+  width: 50%;
+}
+
+.button-second {
+  background-color: #f00;
+  width: 50%;
+}
+.disable{
+  background: #f2f2f2;
+  opacity: 0.8;
+}
+
+.linkCnt {
+  margin: 20px 12px 10px;
+  font-weight: bold;
+  color: #222;
+
+}
+.linkCnt.second{
+  margin: 10px 12px 30px;
+
+}
+
+.text-style {
+  color: rgb(102, 102, 102);
+  font-size: 14px;
+  text-align: left;
+  text-decoration: none;
+  background: transparent;
+  border-bottom: 1px solid #333;
+}
+
+#vipSuccess .card-wrap {
+  height: 210px;
+  padding-top:30px;
+  /* border-bottom:1px solid #dcdcdc; */
+  margin-bottom: 40px;
+}
+#vipSuccess .blank{
+  height: 20px;
+}
+#vipSuccess .card-wrap .card {
+  height: 180px;
+  width: 84%;
+  background: rgb(61, 183, 248);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  background-size: 100% 100%;
+}
+#vipSuccess .card .logo {
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  position: absolute;
+  left: 20px;
+  top: 25px;
+}
+#vipSuccess .card .barcode {
+  height: 25px;
+  width: 25px;
+  overflow: hidden;
+  position: absolute;
+  right: 20px;
+  top: 35px;
+}
+#vipSuccess .card .title {
+  position: absolute;
+  top: 25px;
+  left: 80px;
+  font-size: 18px;
+  color: #222;
+}
+#vipSuccess .card .level {
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  font-size: 12px;
+  color: #222;
+}
+#vipSuccess .card .cardno {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #222;
+  letter-spacing: 4px;
+  /* text-shadow:1px 0 #eee,0 -1px #eee, 1px 0 #333,0 1px #333; */
+}
+#vipSuccess .card .duration {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #222;
+}
