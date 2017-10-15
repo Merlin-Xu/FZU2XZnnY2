@@ -1,6 +1,5 @@
 
 var app = getApp()
-
 Page({
   data: {
     // 是否领取会员卡
@@ -53,7 +52,7 @@ Page({
       success: function (res) {
         console.log(res.data);
         that.setData({
-          'cardDetail.cardNo': res.data
+          'cardDetail.cardNo': (res.data || 0).toString().replace(/(\d)(?=(?:\d{4})+$)/g, '$1 ')
         });
       },
       fail: function (res) {

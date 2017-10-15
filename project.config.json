@@ -33,6 +33,12 @@
 					"name": "me",
 					"pathName": "pages/page10003/page10003",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "card",
+					"pathName": "pages/vipCard/vipCard",
+					"query": ""
 				}
 			]
 		},

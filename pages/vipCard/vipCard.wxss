@@ -1,12 +1,15 @@
 #vipCard {
   display: block;
-  background:#ffffff;
+  background: #fff;
 }
+
 #vipCard .card-wrap {
   height: 210px;
-  padding-top:30px;
-  border-bottom:1px solid #dcdcdc;
+  width: 100%;
+  padding-top: 30px;
+  border-bottom: 1px solid #dcdcdc;
 }
+
 #vipCard .card-wrap .card {
   height: 180px;
   width: 84%;
@@ -17,6 +20,7 @@
   position: relative;
   background-size: 100% 100%;
 }
+
 #vipCard .card .logo {
   height: 50px;
   width: 50px;
@@ -25,6 +29,7 @@
   left: 20px;
   top: 20px;
 }
+
 #vipCard .card .barcode {
   height: 25px;
   width: 25px;
@@ -33,6 +38,7 @@
   right: 20px;
   top: 20px;
 }
+
 #vipCard .card .title {
   position: absolute;
   top: 20px;
@@ -40,29 +46,33 @@
   font-size: 18px;
   color: #fff;
 }
+
 #vipCard .card .level {
   position: absolute;
   top: 48px;
   left: 80px;
   color: #fff;
 }
+
 #vipCard .card .cardno {
   position: absolute;
   bottom: 40px;
   left: 20px;
   color: #fff;
   letter-spacing: 4px;
-  text-shadow:1px 0 #eee,0 -1px #eee, 1px 0 #333,0 1px #333;
+  text-shadow: 1px 0 #eee, 0 -1px #eee, 1px 0 #333, 0 1px #333;
 }
+
 #vipCard .card .duration {
   position: absolute;
   bottom: 20px;
   left: 20px;
   color: #fff;
 }
-#vipCard .card-content {
 
+#vipCard .card-content {
 }
+
 #vipCard .card-content .item-title {
   position: relative;
   height: 50px;
@@ -71,141 +81,171 @@
   border-bottom: 1px solid #dcdcdc;
   padding-left: 16px;
 }
+
 #vipCard .item-title .ico-moon {
-  position:absolute;
-  top:15px;
-  right:26px;
-  width:20px;
-  height:20px;
-  font-size:20px;
-  line-height:20px;
+  position: absolute;
+  top: 15px;
+  right: 26px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  line-height: 20px;
   text-indent: 0;
   transition: transform 1s;
 }
+
 #vipCard .item-title.active .ico-moon {
   transform: rotate(180deg);
 }
+
 #vipCard .card-content .item-body {
   display: none;
-  border-bottom:1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
 }
+
 #vipCard .card-content .item-body.active {
   display: block;
 }
+
 .vipCard-rights {
-  padding:20px 0 0 20px;
+  padding: 20px 0 0 20px;
 }
+
 .vipCard-rights .content {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   padding-bottom: 15px;
 }
+
 .vipCard-rights .content .item {
   min-height: 20px;
   font-size: 14px;
   margin-bottom: 10px;
 }
+
 .vipCard-rights .content .item:nth-child(odd) {
   flex: 30%;
   color: #666;
 }
+
 .vipCard-rights .content .item:nth-child(even) {
   flex: calc(70% - 20px);
-  padding-right:20px;
+  padding-right: 20px;
 }
+
 .vipCard-notice {
-  padding:20px 0 0 20px;
+  padding: 20px 0 0 20px;
 }
+
 .vipCard-notice .content {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   padding-bottom: 15px;
 }
+
 .vipCard-notice .content .item {
   min-height: 20px;
   font-size: 14px;
   margin-bottom: 10px;
 }
+
 .vipCard-notice .content .item:nth-child(odd) {
   flex: 30%;
   color: #666;
 }
+
 .vipCard-notice .content .item:nth-child(even) {
   flex: calc(70% - 20px);
-  padding-right:20px;
+  padding-right: 20px;
 }
+
 .vipCard-points {
-  padding:20px 0 0 20px;
+  padding: 20px 0 0 20px;
 }
+
 .vipCard-points .content {
-  display:flex;
-  flex-wrap:wrap;
-  padding-bottom:15px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
 }
+
 .vipCard-points .content .item {
   min-height: 20px;
   font-size: 14px;
   margin-bottom: 10px;
 }
+
 .vipCard-points .content .item:nth-child(odd) {
   flex: 30%;
   color: #666;
 }
+
 .vipCard-points .content .item:nth-child(even) {
   flex: calc(70% - 20px);
-  padding-right:20px;
+  padding-right: 20px;
 }
+
 .vipCard-contact {
-  padding:20px 0 0 20px;
+  padding: 20px 0 0 20px;
 }
-.vipCard-contact .content{
-  display:flex;
+
+.vipCard-contact .content {
+  display: flex;
   flex-wrap: wrap;
 }
+
 .vipCard-contact .content .item {
   min-height: 20px;
   font-size: 14px;
   margin-bottom: 10px;
 }
+
 .vipCard-contact .content .item:nth-child(odd) {
   flex: 30%;
   color: #666;
 }
+
 .vipCard-contact .content .item:nth-child(even) {
   flex: calc(70% - 20px);
-  padding-right:20px;
+  padding-right: 20px;
 }
+
 #vipCard .no-receive-card {
   height: 100vh;
   background: #fff;
 }
+
 .no-receive-card .tip-area {
   display: block;
   padding-top: 130px;
   text-align: center;
 }
+
 .no-receive-card .tip-img {
   display: block;
   width: 120px;
   height: 90px;
   margin: 0 auto 22px;
 }
+
 .no-receive-card .tip-text-1 {
   display: block;
   margin-bottom: 10px;
   color: #888;
   font-size: 20px;
 }
+
 .no-receive-card .tip-text-2 {
   display: block;
   color: #b2b2b2;
   font-size: 14px;
 }
+
 .centerPage-save-btn {
   margin: 70rpx 50rpx;
-  height:90rpx;
-  line-height:90rpx;
-  background-color: #1AAD19;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #1aad19;
   color: #fff;
   border-radius: 2px;
   text-align: center;

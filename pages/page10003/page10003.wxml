@@ -1,6 +1,31 @@
-<import src='../../utils/tab.wxml'/>
-<import src='../../utils/grid_icon.wxml'/>
-
+<view animation="{{cardDetail.animationData}}" class="container-column buydes-dialog-container" wx:if="{{cardDetail.showModalStatus}}">
+  <view class="buydes-dialog-container-first">
+    <label class='tip'>结帐时向DFS免税店服务员出示条码即可赚取积分</label>
+  </view>
+  <view class="container-column buydes-dialog-container-top">
+    <view class="card-wrap" catchtap='userCenterTurnToPage' data-router='vipCard'>
+      <view class="card" style="background: #fff">
+        <image class="logo" src="..\/..\/image\/Loyal-T-Logo.jpg"></image>
+        <image class="barcode" src="../../image/qr-code-dark.png"></image>
+        <view class="title">DFS免税店</view>
+        <view class="level">T贵宾卡会员</view>
+        <view class="cardno">{{ cardDetail.cardNo }}</view>
+      </view>
+    </view>
+    <view class="buydes-dialog-container-bottom">
+      <view class="code">
+        <image class="barcode" src="../../image/cnaidc.png"></image>
+      </view>
+    </view>
+    <view class="tab-group" bindtap="hideModal">
+      <!-- <view class='tab-group'> -->
+        <view class="button" bindtap="bindTapVip">打开我的卡包</view>
+      <!-- </view> -->
+    </view>
+  </view>
+</view>
+<import src='../../utils/tab.wxml' />
+<import src='../../utils/grid_icon.wxml' />
 <view>
   <template name="zcCarousel">
     <swiper indicator-dots="true" circular="true" autoplay="{{data.customFeature.autoplay}}" vertical="{{data.customFeature.vertical}}" interval="{{data.customFeature.interval*1000}}" duration="750" style="{{data.style}}">
@@ -17,13 +42,13 @@
 
   <view style='padding: 0px 10px 0px 10px'>
     <view class='grid-row' style='border-bottom: 1px solid #ddd'>
-      <template is='grid-icon' data="{{end:false,url:'../../image/coupon.png', title:'卡券', width:'50%',router:'couponList'}}"/>
-      <template is='grid-icon' data="{{end:true,url:'../../image/user.png', title:'会员信息', width:'50%',router:'vipCard'}}"/>
+      <template is='grid-icon' data="{{end:false,url:'../../image/coupon.png', title:'卡券', width:'50%',userCenterTurnToPage:'userCenterTurnToPage',router:'couponList'}}" />
+      <template is='grid-icon' data="{{end:true,url:'../../image/user.png', title:'会员信息', width:'50%',userCenterTurnToPage:'showModal'}}" />
     </view>
 
     <view class='grid-row'>
-      <template is='grid-icon' data="{{end:false,url:'../../image/gift.png', title:'会员奖赏', width:'50%',router:'vipCard'}}"/>
-      <template is='grid-icon' data="{{end:true,url:'../../image/order.png', title:'购物记录', width:'50%'}}"/>
+      <template is='grid-icon' data="{{end:false,url:'../../image/gift.png', title:'会员奖赏', width:'50%',userCenterTurnToPage:'userCenterTurnToPage',router:'vipCard'}}" />
+      <template is='grid-icon' data="{{end:true,url:'../../image/order.png', title:'购物记录', width:'50%'}}" />
     </view>
   </view>
 </view>
@@ -34,9 +59,8 @@
 </view>
 
 <view style='position: fixed; top: 0px; right: 0px; display: flex; flex-direction: column; padding: 10px; text-align: center'>
-  <image style='width: 60px; height: 24px; padding-right: 5px; background-color: #fff; padding:10px;' 
-  mode='aspectFit' src="../../image/Loyal-T-Logo.jpg"></image>
+  <image style='width: 60px; height: 24px; padding-right: 5px; background-color: #fff; padding:10px;' mode='aspectFit' src="../../image/Loyal-T-Logo.jpg"></image>
   <text style='color:#ddd; font-size: 10px'>{{cardNo}}</text>
 </view>
 
-<template is='tab' data="{{position:'3'}}"/>
+<template is='tab' data="{{position:'3'}}" />

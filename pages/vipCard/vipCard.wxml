@@ -1,17 +1,17 @@
 <view class="page" id="vipCard">
   <view class="yes-receive-card" wx:if="{{ receiveCard == 1 }}">
-    <navigator url="../vipCardDetail/vipCardDetail" hover-class="navigator-hover">
-      <view class="card-wrap">
-        <view class="card" style="background: {{ cardDetail.cardBackground }}">
-          <image class="logo" src="{{ cardDetail.logoUrl }}"></image>
-          <image class="barcode" src="../../image/qr-code.png"></image>
-          <view class="title">{{ cardDetail.appName }}</view>
-          <view class="level">{{ cardDetail.level }}</view>
-          <view class="cardno">{{ cardDetail.cardNo }}</view>
-          <view class="duration">{{ cardDetail.duration }}</view>
-        </view>
+     <navigator url="../vipCardDetail/vipCardDetail" hover-class="navigator-hover"> 
+    <view class="card-wrap" bindtap='showModal'>
+      <view class="card" style="background: {{ cardDetail.cardBackground }}">
+        <image class="logo" src="{{ cardDetail.logoUrl }}"></image>
+        <image class="barcode" src="../../image/qr-code.png"></image>
+        <view class="title">{{ cardDetail.appName }}</view>
+        <view class="level">{{ cardDetail.level }}</view>
+        <view class="cardno">{{ cardDetail.cardNo }}</view>
+        <view class="duration">{{ cardDetail.duration }}</view>
       </view>
-    </navigator>
+    </view>
+     </navigator> 
     <view class="card-content">
       <view class="card-item">
         <view class="item-title {{ activeItem == 'message' ? 'active' : ''}}" catchtap="showItemContent" data-item="message">
