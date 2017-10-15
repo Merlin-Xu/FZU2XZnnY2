@@ -20,6 +20,7 @@ Page({
     channelSelected: 0,
     newCode: '',
     step: 2,
+    sexArr:['男','女','未知'],
     storeArr: ["不限",
       "\u0044\u0046\u0053\u592a\u9633\u5e7f\u573a\u5e97\uff08\u5c16\u6c99\u5480\u5e97\uff09", "\u0044\u0046\u0053\u534e\u61cb\u5e7f\u573a\u5e97", "\u9999\u6e2f\u0044\u0046\u0053\u94dc\u9523\u6e7e\u5e97\uff08\u0054\u5e7f\u573a\uff09"],
     brandArr: ["全部", "BURBERRY", "GUCCI", "FERRAGAMO", "施华洛世奇水晶", "雷朋", "万宝龙", "登喜路", "BALLY", "COACH", "TUMI", "CELINE(部分9折)", "LOEWE。GIVENCHY", "TORY BURCH", "马克·雅各布(Marc by Marc Jacobs）"],
@@ -35,7 +36,7 @@ Page({
     if (userInfo) {
       this.setData({
         country: userInfo.country,
-        sex: userInfo.sex == 0 ? '男' : userInfo.sex == 1 ? '女' : '未知',
+        sex: userInfo.sex,
         verifyEmail: userInfo.email,
         verifyPhone: userInfo.phone
       })

@@ -30,7 +30,13 @@ Page({
     modelChooseName: [],
   },
   onLoad: function (e) {
-
+    if (!app.isLogin()) {
+      app.goLogin({
+        success: function () {
+          // app.turnToPage('/pages/userCenter/userCenter?from=userCenterEle');
+        }
+      });
+    }
   },
   bindLoyalT: function (e) {
     app.getStorage({

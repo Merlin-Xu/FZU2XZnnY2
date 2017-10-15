@@ -5,7 +5,7 @@
   <view class="container-column buydes-dialog-container-top">
     <view class="card-wrap" catchtap='userCenterTurnToPage' data-router='vipCard'>
       <view class="card" style="background: #fff">
-        <image class="logo" src="..\/..\/image\/Loyal-T-Logo.jpg"></image>
+        <image class="logo" src="http://img.weiye.me/zcimgdir/album/file_59df82a3436d2.jpg"></image>
         <image class="barcode" src="../../image/qr-code-dark.png"></image>
         <view class="title">DFS免税店</view>
         <view class="level">T贵宾卡会员</view>
@@ -14,7 +14,7 @@
     </view>
     <view class="buydes-dialog-container-bottom">
       <view class="code">
-        <image class="barcode" src="../../image/cnaidc.png"></image>
+        <image class="barcode" src="http://img.weiye.me/zcimgdir/album/file_59e306e41ce27.png"></image>
       </view>
     </view>
     <view class="tab-group" bindtap="hideModal">
@@ -28,7 +28,7 @@
 <import src='../../utils/grid_icon.wxml' />
 <view>
   <template name="zcCarousel">
-    <swiper indicator-dots="true" indicator-active-color="#fff" circular="true" autoplay="{{data.customFeature.autoplay}}" vertical="{{data.customFeature.vertical}}" interval="{{data.customFeature.interval*1000}}" duration="750" class="swiper" bindchange='swipe'>
+    <swiper indicator-dots="true" indicator-color="#333" indicator-active-color="#fff" circular="true" autoplay="{{data.customFeature.autoplay}}" vertical="{{data.customFeature.vertical}}" interval="{{data.customFeature.interval*1000}}" duration="750" class="swiper" bindchange='swipe'>
       <block wx:for="{{data.content}}" wx:key="" >
         <swiper-item class="swiper-block" data-event-params="{{item.eventParams}}" catchtap="{{item.eventHandler}}">
           <view style='position: fixed; width: 100%; height: 100%;display: flex; align-items: center; justify-content: center;'>
@@ -68,7 +68,7 @@
 </view>
 
 <view style='position: fixed; top: 0px; right: 0px; display: flex; flex-direction: column; padding: 10px; text-align: center'>
-  <image style='width: 60px; height: 24px; padding-right: 5px; background-color: #fff; padding:10px;' mode='aspectFit' src="../../image/Loyal-T-Logo.jpg"></image>
+  <image style='width: 50px; height: 24px;background-color: #fff; padding:6px 6px;border-radius:4px;' mode='aspectFit' src="http://img.weiye.me/zcimgdir/album/file_59df82a3436d2.jpg"></image>
   <text style='color:#ddd; font-size: 10px'>{{cardNo}}</text>
 </view>
 

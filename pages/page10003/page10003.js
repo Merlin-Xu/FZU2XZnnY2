@@ -10,7 +10,6 @@ var pageData = {
       duration: '无限期',
       cartNo: '',
       level: '普通用户',
-      name:'',
       animationData: "",
       showModalStatus: false
     },
@@ -62,19 +61,20 @@ var pageData = {
     userName: '',
     cardNo: '',
   },
-  onLoad: function (e) {
+  onLoad: function (option) {
     let that = this;
     app.getStorage({
       key: 'vipNo',
       success: function (res) {
         that.setData({
-          'cardDetail.cardNo': (res.data || 0).toString().replace(/(\d)(?=(?:\d{4})+$)/g, '$1 ')
+          'cardDetail.cardNo': (res.data || 0).toString().replace(/(\d)(?=(?:\d{4})+$)/g, '$1 '),
+          cardNo: res.data
         });
       },
       fail: function (res) {
-        if (option && option.vipNo)
-          that.setData({ 'cardDetail.cardNo': res });
-        else {
+        if (option && option.vipNo) {
+          that.setData({ 'cardDetail.cardNo': option.vipNo, cardNo: option.vipNo });
+        } else {
           app.showModal({
             title: "提示",
             content: "您并没有绑定会员卡",
@@ -85,11 +85,20 @@ var pageData = {
               app.reLaunch({ url: '../page10000/page10000' });
             }
           });
-
         }
       }
     });
-
+    app.getStorage({
+      key: 'lastName',
+      success: function (res) {
+        that.setData({
+          userName: res.data
+        })
+      }
+    });
+  },
+  userCenterTurnToPage: function (e) {
+    app.userCenterTurnToPage(e);
   },
   bindTapVip: function (e) {
     app.getStorage({
@@ -119,29 +128,46 @@ var pageData = {
     })
   },
 
-  drawCircle: function (id, color, arc) {
+  drawCircle: function (id, color, arc, end) {
     var context = wx.createCanvasContext(id)
-    context.setStrokeStyle(color)
-    context.setLineWidth(4)
-    context.arc(75, 75, 73, Math.PI / 2, arc, false)
-    context.stroke()
-    context.draw()
+    context.setStrokeStyle(color);
+    context.setLineWidth(4);
+    context.arc(75, 75, 73, Math.PI / 2, arc, end);
+    context.setStrokeStyle(color);
+    context.stroke();
+    if(end){
+      context.beginPath();
+      context.setStrokeStyle(color);
+      context.setLineWidth(4);
+      context.arc(75, 75, 70, Math.PI / 2, Math.PI * 3 / 2);
+      context.setStrokeStyle("gray");
+      context.stroke();
+      // context.beginPath()
+      // context.arc(75, 0, 10, 0, 0 * Math.PI)
+      // context.setFillStyle(color)
+      // context.fill();
+      context.beginPath()
+      context.arc(75, 5, 10, 0, 2 * Math.PI)
+      context.setFillStyle('red')
+      context.fill()
+    }
+    context.draw();
   },
 
-  onReady: function(){
-    this.drawCircle('circle1', "#00b0b0", Math.PI * 5 / 2)
+  onReady: function () {
+    this.drawCircle('circle1', "#00b0b0", Math.PI * 5 / 2,false)
   },
 
-  swipe: function(e){
-    switch (e.detail.current){
+  swipe: function (e) {
+    switch (e.detail.current) {
       case 0:
-        this.drawCircle('circle1', "#00b0b0", Math.PI * 5 / 2)
+        this.drawCircle('circle1', "#00b0b0", Math.PI * 5 / 2,false)
         break
       case 1:
-        this.drawCircle('circle2', "#f0c050", Math.PI * 3 / 2)
+        this.drawCircle('circle2', "#f0c050", Math.PI * 3 / 2, Math.PI * 1 / 2)
         break
       case 2:
-        this.drawCircle('circle3', "#e03070", Math.PI * 5 / 2)
+        this.drawCircle('circle3', "#e03070", Math.PI * 5 / 2,false)
         break
     }
   },

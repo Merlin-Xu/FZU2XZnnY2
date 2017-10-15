@@ -11,11 +11,18 @@
       <input class="name" bindinput="inputCardNo" value='{{vipCardNo}}' placeholder="会员卡上的会员编号" />
       <image class="icon-right" src='../../image/scan.png' mode="aspectFit" bindtap='bindScan' style="width: 10%"></image>
     </view>
-    <view class="verify-row">
+    <view class="radio">
+      <radio-group class="radio-group" bindchange="radioChange">
+        <view class="radio" wx:for="{{itemsArr}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </view>
+      </radio-group>
+    </view>
+    <view class="verify-row" wx:if="{{!showPhone}}">
       <label class="item-name name">邮箱</label>
       <input class="name" bindinput="inputEmail" placeholder="已登记的邮箱" />
     </view>
-    <view class="verify-row" style="border-bottom: none;">
+    <view class="verify-row" style="border-bottom: none;" wx:if="{{showPhone}}">
       <label class="item-name">手机号 +86</label>
       <input class="code-tel" value='{{verifyPhone}}' bindinput="inputPhone" placeholder="已登记的手机号" />
     </view>
@@ -69,7 +76,7 @@
     <view class="card-wrap" bindtap='redirectDetail'>
       <navigator url="../vipCardDetail/vipCardDetail" hover-class="navigator-hover">
         <view class="card" style="background: #fff">
-          <image class="logo" src="..\/..\/image\/Loyal-T-Logo.jpg"></image>
+          <image class="logo" src="http://img.weiye.me/zcimgdir/album/file_59df82a3436d2.jpg"></image>
           <image class="barcode" src="../../image/qr-code-dark.png"></image>
           <view class="title">DFS免税店</view>
           <view class="level">T贵宾卡会员</view>
@@ -77,7 +84,7 @@
         </view>
       </navigator>
     </view>
-<!-- <view class="blank"></view> -->
+    <!-- <view class="blank"></view> -->
     <view class='tab-group'>
       <view class="button" bindtap="back" style='background-color: #000;'>
         <span>返回首页</span>

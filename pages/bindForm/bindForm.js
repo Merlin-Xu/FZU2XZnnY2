@@ -9,10 +9,22 @@ Page({
     vipNo: '',
     step: 1,
     newCode: '',
+    itemsArr: [
+      { name: 'email', value: '邮箱' },
+      { name: 'phone', value: '手机号', checked: 'true' }
+    ],
+    showPhone:true,
     newCodeBtnDisabled: false,
     newCodeStatus: '获取验证码',
     bindNewPhoneBtnDisabled: false,
     codeInterval: 60
+  },
+  radioChange: function (e) {
+    console.log(e.detail.value);
+    if(e.detail.value=="phone")
+      this.setData({ showPhone:true})
+    else
+      this.setData({ showPhone: true })
   },
   onLoad: function (options) {
     var userInfo = app.getUserInfo();
@@ -69,9 +81,10 @@ Page({
     }
 
     app.sendRequest({
-      url: '/index.php?r=AppData/VerifyPhone',
+      url: '/index.php?r=AppData/XcxVerifyNewPhone',
       mehtod: 'post',
       data: {
+        phone: verifyPhone,
         code: newCode
       },
       success: function (res) {
@@ -196,7 +209,11 @@ Page({
       newCodeBtnDisabled: true
     })
     app.sendRequest({
-      url: '/index.php?r=AppData/PhoneCode',
+      url: '/index.php?r=AppData/NewPhoneCode',
+      method: 'post',
+      data: {
+        phone: verifyPhone
+      },
       success: function (res) {
         var second = that.data.codeInterval,
           interval;

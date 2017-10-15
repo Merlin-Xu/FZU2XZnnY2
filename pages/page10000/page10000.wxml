@@ -27,7 +27,7 @@
   </view>
 
   <view style='background-color: #eed; display: flex; flex-direction: row; '>
-    <image src="../../image/Loyal-T-Logo.jpg" style='width: 80px;height: 80px'></image>
+    <image src="http://img.weiye.me/zcimgdir/album/file_59df82a3436d2.jpg" style='width: 80px;height: 80px'></image>
     <text style='line-height: 80px; margin-left:15px;text-align: center'>不是T贵宾会员？</text>
     <view style='line-height: 80px; margin-left:15px;text-align: center'>
       <text style='background-color: #000; color: #fff; padding: 10px 20px 10px 20px' bindtap='registerScan'>立即登记</text>

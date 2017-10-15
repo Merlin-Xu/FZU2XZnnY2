@@ -15,7 +15,11 @@
         </view>
         <view class="verify-row" style="border-bottom: none;">
           <label class="item-name name">性别</label>
-          <input class="name" value="{{sex}}" placeholder="" disabled/>
+          <picker bindchange="bindStoreChange" value="{{sex}}" range="{{sexArr}}">
+            <view class="picker">
+              {{sexArr[sex]}}
+            </view>
+          </picker>
         </view>
         <view class="verify-row">
           <label class="item-name name">邮箱</label>
@@ -110,7 +114,7 @@
     <view class="card-wrap" bindtap='redirectDetail'>
       <navigator url="../vipCardDetail/vipCardDetail" hover-class="navigator-hover">
         <view class="card" style="background: #fff">
-          <image class="logo" src="..\/..\/image\/Loyal-T-Logo.jpg"></image>
+          <image class="logo" src="http://img.weiye.me/zcimgdir/album/file_59df82a3436d2.jpg"></image>
           <image class="barcode" src="../../image/qr-code-dark.png"></image>
           <view class="title">DFS免税店</view>
           <view class="level">T贵宾卡会员</view>
