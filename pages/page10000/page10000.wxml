@@ -14,16 +14,16 @@
 <view class="ele-container">
   <template is="zcCarousel" data="{{data:carousel}}"></template>
 </view> -->
-  <image src="../../image/cardface.jpg" style='width:100%;'></image>
+  <image src="http://img.weiye.me/zcimgdir/album/file_59e3573997f27.png" style='width:100%;'></image>
   <view style='background-color: #c54; text-align: center; padding: 10px;margin-top:-6px;'>
     <text style='color: #fff; display: block; margin-bottom: 5px;'>绑定T贵宾卡账户，随时随地享受优惠</text>
     <text style='color: #fff; border-bottom: 1px solid #fff;' bindtap='bindLoyalT'>立即绑定</text>
   </view>
 
   <view style='background-color: #fff; padding: 20px 0px 20px 0px; display: flex; flex-direction: row'>
-    <template is='grid-icon' data="{{end:false,url:'../../image/gift.png', title:'会员奖赏', width:'33%'}}" />
-    <template is='grid-icon' data="{{end:false,url:'../../image/shopping.png', title:'线上购物', width:'33%'}}" />
-    <template is='grid-icon' data="{{end:true,url:'../../image/contact.png', title:'联系客服', width:'33%'}}" />
+    <template is='grid-icon' data="{{end:false,url:'../../image/gift.svg`', title:'会员奖赏', width:'33%'}}" />
+    <template is='grid-icon' data="{{end:false,url:'../../image/shopping.svg', title:'线上购物', width:'33%'}}" />
+    <template is='grid-icon' data="{{end:true,url:'../../image/contact.svg', title:'联系客服', width:'33%'}}" />
   </view>
 
   <view style='background-color: #eed; display: flex; flex-direction: row; '>

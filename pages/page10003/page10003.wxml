@@ -27,25 +27,25 @@
 
   <view style='padding: 0px 10px 0px 10px'>
     <view class='grid-row' style='border-bottom: 1px solid #ddd'>
-      <template is='grid-icon' data="{{end:false,url:'../../image/coupon.png', title:'卡券', width:'50%',userCenterTurnToPage:'userCenterTurnToPage',router:'couponList'}}" />
-      <template is='grid-icon' data="{{end:true,url:'../../image/user.png', title:'会员信息', width:'50%',userCenterTurnToPage:'tapUserInfo'}}" />
+      <template is='grid-icon' data="{{end:false,url:'../../image/coupon.svg', title:'卡券', width:'50%',userCenterTurnToPage:'userCenterTurnToPage',router:'couponList'}}" />
+      <template is='grid-icon' data="{{end:true,url:'../../image/user.svg', title:'会员信息', width:'50%',userCenterTurnToPage:'tapUserInfo'}}" />
     </view>
 
     <view class='grid-row'>
-      <template is='grid-icon' data="{{end:false,url:'../../image/gift.png', title:'会员奖赏', width:'50%',userCenterTurnToPage:'userCenterTurnToPage',router:'vipCard'}}" />
-      <template is='grid-icon' data="{{end:true,url:'../../image/order.png', title:'购物记录', width:'50%'}}" />
+      <template is='grid-icon' data="{{end:false,url:'../../image/gift.svg', title:'会员奖赏', width:'50%',userCenterTurnToPage:'userCenterTurnToPage',router:'vipCard'}}" />
+      <template is='grid-icon' data="{{end:true,url:'../../image/order.svg', title:'购物记录', width:'50%'}}" />
     </view>
   </view>
 </view>
 
 <view style='position: fixed; top: 0px; display: flex; flex-direction: row; padding: 10px'>
   <image style='width: 24px; height: 24px; padding-right: 5px' src="../../image/user_circle.png"></image>
-  <text style='color:#fff; font-size: 16px; border-bottom: 1px solid #fff;'>{{userName}}</text>
+  <text style='color:#fff; font-size: 16px; border-bottom: 1px solid #fff;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:200rpx;'>{{userName}}</text>
 </view>
 
 <view style='position: fixed; top: 0px; right: 0px; display: flex; flex-direction: column; padding: 10px; text-align: center'>
   <image style='width: 50px; height: 24px;background-color: #fff; padding:6px 6px;border-radius:4px;' mode='aspectFit' src="http://img.weiye.me/zcimgdir/album/file_59df82a3436d2.jpg"></image>
-  <text style='color:#ddd; font-size: 10px'>{{cardNo}}</text>
+  <text style='color:#ddd; font-size: 10px;text-align:left;position:relative;left:-5px;'>{{cardNo}}</text>
 </view>
 
 <template is='tab' data="{{position:'3'}}" />
