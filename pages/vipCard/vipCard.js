@@ -1,6 +1,5 @@
 
 var app = getApp()
-
 Page({
   data: {
     // 是否领取会员卡
@@ -53,14 +52,25 @@ Page({
       success: function (res) {
         console.log(res.data);
         that.setData({
-          'cardDetail.cardNo': res.data
+          'cardDetail.cardNo': (res.data || 0).toString().replace(/(\d)(?=(?:\d{4})+$)/g, '$1 ')
         });
       },
       fail: function (res) {
         if (option && option.vipNo)
           that.setData({ 'cardDetail.cardNo': res });
-        else
-          app.turnToPage('../page10000/page10000', true);
+        else {
+          app.showModal({
+            title: "提示",
+            content: "您并没有绑定会员卡",
+            confirmText: "绑定",
+            showCancel: true,
+            cancelText: "取消",
+            confirm: function (e) {
+              app.reLaunch({ url: '../page10000/page10000' });
+            }
+          });
+
+        }
       }
     });
 
@@ -110,7 +120,7 @@ Page({
     //     'is_all': 1
     //   },
     //   success: function (res) {
-    let res = { "data": { "app_name": "DFS 免税店", "logo": "..\/..\/image\/Loyal-T-Logo.jpg", "title": "LoyalT Card", "background_type": "0", "background": "http:\/\/img.weiye.me\/zcimgdir\/album\/file_58a2c3de7cacf.jpg", "expire": "\u65e0\u9650\u671f", "is_vip": 1, "is_free_postage": "0", "discount": "8.00", "integral": "1000", "phone": "18524111216", "coupon_list": [{ "id": "8819", "name": "\u5168\u573a\u4e03\u6298", "num": "1" }], "description": "\u4efb\u610f\u95e8\u5e97\u5747\u53ef\u4eab\u7528", "consume_num": 0, "total_integral": "1000", "can_use_integral": "1000" }  };
+    let res = { "data": { "app_name": "DFS 免税店", "logo": "..\/..\/image\/Loyal-T-Logo.jpg", "title": "LoyalT Card", "background_type": "0", "background": "http:\/\/img.weiye.me\/zcimgdir\/album\/file_58a2c3de7cacf.jpg", "expire": "\u65e0\u9650\u671f", "is_vip": 1, "is_free_postage": "0", "discount": "8.00", "integral": "1000", "phone": "18524111216", "coupon_list": [{ "id": "8819", "name": "\u5168\u573a\u4e03\u6298", "num": "1" }], "description": "\u4efb\u610f\u95e8\u5e97\u5747\u53ef\u4eab\u7528", "consume_num": 0, "total_integral": "1000", "can_use_integral": "1000" } };
     let cardBackground = ''
     if (parseInt(res.data.background_type) == 0) {
       cardBackground = 'url(' + res.data.background + ') 0% 0% / 100% 100%';

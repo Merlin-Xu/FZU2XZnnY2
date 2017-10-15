@@ -1,42 +1,3 @@
- /*
-.input-item {
-  position: relative;
-  margin: 15px;
-  padding: 5px;
-  border-top: 1px solid #d8d8d8;
-  border-bottom: 1px solid #d8d8d8;
-  border-left: 1px solid #d8d8d8;
-  border-right: 1px solid #d8d8d8;
-  border-radius: 5px;
-  background-color: #fff;
-}
-
-.input-item.view{
-  border: none;
-  color:#d8d8d8;
-  margin:5px 15px;
-}
-.input-item .labelText{
-  color: #333;
-}
-.input-item .icon-right{
-  position: absolute;
-  border-left: 1px solid #d8d8d8;
-  right: 4px;
-  top: 50%;
-  margin-top: -10px;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-}
-
-.button{
-  height:150rpx;
-  line-height: 150rpx;
-  color: #fff;
-  text-align: center;
-  width: 50%;
-} */
 
 page {
   background-color: #efeff4;
@@ -196,7 +157,116 @@ input {
   padding: none;
   
 }
+.selectBox{
+  display:block;
+  /* width: 100%; */
+}
+/* pick{
+  display: inline-block; 
+  position: relative;
+  width:50%;
+} */
+.picker{
+  display: block;
+  position:absolute;
+  width: 60%;
+  margin-top: -34px;
+  margin-left: 26%;
+  padding-top: 10px;
+  height: 35px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap:normal;
+  white-space:nowrap;
+}
+.preferred{
+   display: inline-block; 
+   width: 25%;
+}
 .seperator{
   border-top: 1px solid #d8d8d8;
   margin: 0px 6px;
+}
+.linkCnt {
+  margin: 20px 12px 10px;
+  font-weight: bold;
+  color: #222;
+
+}
+.linkCnt.second{
+  margin: 10px 12px 30px;
+
+}
+
+.text-style {
+  color: rgb(102, 102, 102);
+  font-size: 14px;
+  text-align: left;
+  text-decoration: none;
+  background: transparent;
+  border-bottom: 1px solid #333;
+}
+
+#vipSuccess .card-wrap {
+  height: 210px;
+  padding-top:30px;
+  /* border-bottom:1px solid #dcdcdc; */
+  margin-bottom: 40px;
+}
+#vipSuccess .blank{
+  height: 20px;
+}
+#vipSuccess .card-wrap .card {
+  height: 180px;
+  width: 84%;
+  background: rgb(61, 183, 248);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  background-size: 100% 100%;
+}
+#vipSuccess .card .logo {
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  position: absolute;
+  left: 20px;
+  top: 25px;
+}
+#vipSuccess .card .barcode {
+  height: 25px;
+  width: 25px;
+  overflow: hidden;
+  position: absolute;
+  right: 20px;
+  top: 35px;
+}
+#vipSuccess .card .title {
+  position: absolute;
+  top: 25px;
+  left: 80px;
+  font-size: 18px;
+  color: #222;
+}
+#vipSuccess .card .level {
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  font-size: 12px;
+  color: #222;
+}
+#vipSuccess .card .cardno {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #222;
+  letter-spacing: 4px;
+  /* text-shadow:1px 0 #eee,0 -1px #eee, 1px 0 #333,0 1px #333; */
+}
+#vipSuccess .card .duration {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #222;
 }
