@@ -39,6 +39,12 @@
 					"name": "card",
 					"pathName": "pages/vipCard/vipCard",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "userinfo",
+					"pathName": "pages/userInfo/userInfo",
+					"query": ""
 				}
 			]
 		},

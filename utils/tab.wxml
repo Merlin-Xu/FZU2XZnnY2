@@ -2,17 +2,17 @@
 <template name='tab'>
   <view class="tab-group">
     <view class="tab" bindtap='tabhome' style='border-right: 1px solid #ddd;'>
-      <image class="{{position=='1'?'icon icon-selected':'icon icon-unselected'}}" src="../../image/tab_home.png"></image>
+      <image class="{{position=='1'?'icon icon-selected':'icon icon-unselected'}}" src="../../image/tab_home.svg"></image>
       <text class="{{position=='1'?'text-selected':'text-unselected'}}">首页</text>
     </view>
 
-    <view class="tab" style='border-right: 1px solid #ddd;'>
-      <image class="{{position=='2'?'icon icon-selected':'icon icon-unselected'}}" src="../../image/tab_scan.png"></image>
+    <view class="tab" style='border-right: 1px solid #ddd;' bindtap='showModal'>
+      <image class="{{position=='2'?'icon icon-selected':'icon icon-unselected'}}" src="../../image/tab_scan.svg"></image>
       <text class="{{position=='2'?'text-selected':'text-unselected'}}">二维码</text>
     </view>
 
     <view class="tab" catchtap="tabmine">
-      <image class="{{position=='3'?'icon icon-selected':'icon icon-unselected'}}" src="../../image/tab_mine.png"></image>
+      <image class="{{position=='3'?'icon icon-selected':'icon icon-unselected'}}" src="../../image/tab_mine.svg"></image>
       <text class="{{position=='3'?'text-selected':'text-unselected'}}">我的</text>
     </view>
   </view>

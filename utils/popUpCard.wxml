@@ -1,0 +1,28 @@
+<template name="popup">
+<view animation="{{cardDetail.animationData}}" class="container-column buydes-dialog-container" wx:if="{{cardDetail.showModalStatus}}">
+  <view class="buydes-dialog-container-first">
+    <label class='tip'>结帐时向DFS免税店服务员出示条码即可赚取积分</label>
+  </view>
+  <view class="container-column buydes-dialog-container-top">
+    <view class="card-wrap" catchtap='userCenterTurnToPage' data-router='vipCard'>
+      <view class="card" style="background: #fff">
+        <image class="logo" src="http://img.weiye.me/zcimgdir/album/file_59df82a3436d2.jpg"></image>
+        <image class="barcode" src="../../image/qr-code-dark.png"></image>
+        <view class="title">DFS免税店</view>
+        <view class="level">T贵宾卡会员</view>
+        <view class="cardno">{{ cardDetail.cardNo }}</view>
+      </view>
+    </view>
+    <view class="buydes-dialog-container-bottom">
+      <view class="code">
+        <image class="barcode" src="http://img.weiye.me/zcimgdir/album/file_59e306e41ce27.png"></image>
+      </view>
+    </view>
+    <view class="tab-group" bindtap="hideModal">
+      <!-- <view class='tab-group'> -->
+        <view class="button" bindtap="bindTapVip">打开我的卡包</view>
+      <!-- </view> -->
+    </view>
+  </view>
+</view>
+</template>
