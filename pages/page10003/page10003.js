@@ -10,6 +10,7 @@ var pageData = {
       duration: '无限期',
       cartNo: '',
       level: '普通用户',
+      name:'',
       animationData: "",
       showModalStatus: false
     },

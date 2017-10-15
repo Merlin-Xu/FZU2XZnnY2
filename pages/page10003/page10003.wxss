@@ -136,7 +136,7 @@
   border-radius: 10px;
 }
 
-.button {
+.buydes-dialog-container .button {
   height: 150rpx;
   line-height: 150rpx;
   width: 100%;
@@ -147,7 +147,7 @@
   text-align: center;
 }
 
-.tab-group {
+.buydes-dialog-container .tab-group {
   background-color: rgba(0, 0, 0, 0);
   color: #fff;
   border: none;
