@@ -223,7 +223,7 @@ Page({
       newCodeBtnDisabled: true
     })
     app.sendRequest({
-      url: '/index.php?r=AppData/NewPhoneCode',
+      url: '/index.php?r=AppData/PhoneCode',
       method: 'post',
       data: {
         phone: verifyPhone

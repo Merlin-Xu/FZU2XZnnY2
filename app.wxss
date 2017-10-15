@@ -3945,7 +3945,7 @@ a {
   /* justify-content: space-between;   */
   background-color: rgba(15, 15, 26, 0.7);
   position: fixed;
-  z-index: 999;
+  z-index: 9999;
 }
 
 .buydes-dialog-container-top .card-wrap {

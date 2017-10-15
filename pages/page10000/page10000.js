@@ -13,7 +13,7 @@ Page({
       cardNo: '',
       animationShowHeight: 300,
       animationData: "",
-      showModalStatus:false
+      showModalStatus: false
     }
   },
   onLoad: function (e) {
@@ -102,10 +102,13 @@ Page({
           title: "提示",
           content: "您并没有绑定会员卡",
           confirmText: "绑定",
-          showCancel: true,
-          cancelText: "取消",
+          cancelText: "首页",
+          confirmColor: '#000',
           confirm: function (e) {
-            app.reLaunch('../bindForm/bindForm');
+            app.reLaunch({ url: '../bindForm/bindForm' });
+          },
+          cancel: function (e) {
+            app.reLaunch({ url: '../page10000/page10000' });
           }
         });
       }

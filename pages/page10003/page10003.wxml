@@ -4,11 +4,11 @@
 <import src='../../utils/grid_icon.wxml' />
 <view>
   <template name="zcCarousel">
-    <swiper indicator-dots="true" indicator-color="#333" indicator-active-color="#fff" circular="true" autoplay="{{data.customFeature.autoplay}}" vertical="{{data.customFeature.vertical}}" interval="{{data.customFeature.interval*1000}}" duration="750" class="swiper" bindchange='swipe'>
+    <swiper indicator-dots="true" indicator-color="#333" indicator-active-color="#fff" circular="true" class="swiper" autoplay="{{data.customFeature.autoplay}}" vertical="{{data.customFeature.vertical}}" interval="{{data.customFeature.interval*1000}}" duration="750"  bindchange='swipe'>
       <block wx:for="{{data.content}}" wx:key="" >
         <swiper-item class="swiper-block" data-event-params="{{item.eventParams}}" catchtap="{{item.eventHandler}}">
-          <view style='position: fixed; width: 100%; height: 100%;display: flex; align-items: center; justify-content: center;'>
-            <canvas style='width: 200px; height: 200px;' canvas-id='{{item.circleId}}'></canvas>
+          <view style='position: fixed; width: 100%; height: 100%;display:flex; align-items: center; justify-content: center;'>
+            <canvas style='width: 200px; height: 200px;z-index:998;' canvas-id='{{item.circleId}}'></canvas>
           </view>
           <view style='position: fixed; width: 100%; height: 100%;display: flex; align-items: center; justify-content: center; flex-direction: column;'>
             <text class='circle-title' style='color:{{item.fontColor}}'>{{item.title}}</text>

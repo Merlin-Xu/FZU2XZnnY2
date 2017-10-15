@@ -4645,6 +4645,7 @@ App({
   showComplexModal: function () {
     // 显示遮罩层  
     let that = this.getAppCurrentPage();
+    let app = this;
     this.getStorage({
       key: 'vipNo',
       success: function (res) {
@@ -4674,8 +4675,12 @@ App({
           content: "您并没有绑定会员卡",
           confirmText: "绑定",
           showCancel: true,
-          cancelText: "取消",
+          cancelText: "首页",
+          confirmColor: '#000',
           confirm: function (e) {
+            app.reLaunch({ url: '../bindForm/bindForm' });
+          },
+          cancel: function (e) {
             app.reLaunch({ url: '../page10000/page10000' });
           }
         });

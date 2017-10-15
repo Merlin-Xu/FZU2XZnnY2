@@ -55,6 +55,7 @@ var pageData = {
       "compId": "carousel1"
     },
     userName: '',
+    currentDot:0,
     popupDetails: {
       cardNo: '',
       animationShowHeight: 300,
@@ -81,8 +82,12 @@ var pageData = {
             content: "您并没有绑定会员卡",
             confirmText: "绑定",
             showCancel: true,
-            cancelText: "取消",
+            cancelText: "首页",
+            confirmColor:'#000',
             confirm: function (e) {
+              app.reLaunch({ url: '../bindForm/bindForm' });
+            },
+            cancel:function(e){
               app.reLaunch({ url: '../page10000/page10000' });
             }
           });
@@ -115,9 +120,13 @@ var pageData = {
           content: "您并没有绑定会员卡",
           confirmText: "绑定",
           showCancel: true,
-          cancelText: "取消",
+          cancelText: "首页",
+          confirmColor: '#000',
           confirm: function (e) {
-            app.reLaunch('../bindForm/bindForm');
+            app.reLaunch({ url: '../bindForm/bindForm' });
+          },
+          cancel: function (e) {
+            app.reLaunch({ url: '../page10000/page10000' });
           }
         });
       }
@@ -154,9 +163,17 @@ var pageData = {
     }
     context.draw();
   },
-
+  removeCircle: function (id){
+    var context = wx.createContext();
+    context.rect(0, 0, 0, 0);
+    context.stroke();
+    wx.drawCanvas({
+      canvasId: id,
+      actions: context.getActions(),
+    })
+  },
   onReady: function () {
-    this.drawCircle('circle1', "#00b0b0", Math.PI * 5 / 2, false)
+    this.drawCircle('circle1', "#00b0b0", Math.PI * 5 / 2, false);
   },
 
   swipe: function (e) {
@@ -171,14 +188,28 @@ var pageData = {
         this.drawCircle('circle3', "#e03070", Math.PI * 5 / 2, false)
         break
     }
+    this.setData({ currentDot: e.detail.current});
   },
   onShow: function (e) {
     app.onShowPopup(e);
   },
   showModal: function (e) {
+    switch (this.data.currentDot) {
+      case 0:
+        this.removeCircle("circle1");
+        break
+      case 1:
+        this.removeCircle("circle2");
+        break
+      case 2:
+        this.removeCircle("circle3");
+        break
+    }
     app.showComplexModal();
   },
   hideModal: function (e) {
+    var event = { detail: { current:this.data.currentDot}};
+    this.swipe(event);
     app.hideComplexModal();
   },
   tapUserInfo: function (e) {
