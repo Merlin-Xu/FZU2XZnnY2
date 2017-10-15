@@ -9,25 +9,12 @@ Page({
         "pic": "http:\/\/img.weiye.me\/zcimgdir\/album\/file_5919646682231.png"
       }]
     },
-    need_login: false,
-    page_router: 'page10000',
-    page_form: 'none',
-    list_compids_params: [],
-    goods_compids_params: [],
-    prevPage: 0,
-    carouselGroupidsParams: [],
-    relobj_auto: [],
-    bbsCompIds: [],
-    dynamicVesselComps: [],
-    communityComps: [],
-    franchiseeComps: [],
-    cityLocationComps: [],
-    seckillOnLoadCompidParam: [],
-    requesting: false,
-    requestNum: 1,
-    modelChoose: [],
-    modelChooseId: '',
-    modelChooseName: [],
+    popupDetails: {
+      cardNo: '',
+      animationShowHeight: 300,
+      animationData: "",
+      showModalStatus:false
+    }
   },
   onLoad: function (e) {
     if (!app.isLogin()) {
@@ -37,6 +24,9 @@ Page({
         }
       });
     }
+  },
+  userCenterTurnToPage: function (e) {
+    app.userCenterTurnToPage(e);
   },
   bindLoyalT: function (e) {
     app.getStorage({
@@ -84,12 +74,12 @@ Page({
   },
   tabmine: function (e) {
     let userInfo = app.getUserInfo();
-    if (Object.keys(userInfo).length == 0 ) {
+    if (Object.keys(userInfo).length == 0) {
       app.goLogin({
         success: function () {
           if (app.isLogin() !== true) {
             app.turnToPage('../page10003/page10003', false);
-          }else{
+          } else {
             app.turnToPage('/pages/userCenter/userCenter?from=userCenterEle');
           }
         }
@@ -98,6 +88,36 @@ Page({
       app.turnToPage('../page10003/page10003', false);
     }
 
-
+  },
+  bindTapVip: function (e) {
+    app.getStorage({
+      key: 'vipNo',
+      success: function (res) {
+        wx.navigateTo({
+          url: '../vipCard/vipCard'
+        });
+      },
+      fail: function (res) {
+        app.showModal({
+          title: "提示",
+          content: "您并没有绑定会员卡",
+          confirmText: "绑定",
+          showCancel: true,
+          cancelText: "取消",
+          confirm: function (e) {
+            app.reLaunch('../bindForm/bindForm');
+          }
+        });
+      }
+    });
+  },
+  onShow: function (e) {
+    app.onShowPopup(e);
+  },
+  showModal: function (e) {
+    app.showComplexModal();
+  },
+  hideModal: function (e) {
+    app.hideComplexModal();
   }
 });

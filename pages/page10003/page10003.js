@@ -1,6 +1,4 @@
-var app = getApp(),
-  animationShowHeight = 300,
-  animationShowWidth = 300;
+var app = getApp()
 
 var pageData = {
   data: {
@@ -10,8 +8,6 @@ var pageData = {
       duration: '无限期',
       cartNo: '',
       level: '普通用户',
-      animationData: "",
-      showModalStatus: false
     },
     "carousel1": {
       "type": "carousel",
@@ -59,7 +55,12 @@ var pageData = {
       "compId": "carousel1"
     },
     userName: '',
-    cardNo: '',
+    popupDetails: {
+      cardNo: '',
+      animationShowHeight: 300,
+      animationData: "",
+      showModalStatus: false
+    }
   },
   onLoad: function (option) {
     let that = this;
@@ -135,7 +136,7 @@ var pageData = {
     context.arc(100, 100, 90, Math.PI / 2, arc, end);
     context.setStrokeStyle(color);
     context.stroke();
-    if(end){
+    if (end) {
       context.beginPath();
       context.setStrokeStyle(color);
       context.setLineWidth(4);
@@ -155,76 +156,32 @@ var pageData = {
   },
 
   onReady: function () {
-    this.drawCircle('circle1', "#00b0b0", Math.PI * 5 / 2,false)
+    this.drawCircle('circle1', "#00b0b0", Math.PI * 5 / 2, false)
   },
 
   swipe: function (e) {
     switch (e.detail.current) {
       case 0:
-        this.drawCircle('circle1', "#00b0b0", Math.PI * 5 / 2,false)
+        this.drawCircle('circle1', "#00b0b0", Math.PI * 5 / 2, false)
         break
       case 1:
         this.drawCircle('circle2', "#f0c050", Math.PI * 3 / 2, Math.PI * 1 / 2)
         break
       case 2:
-        this.drawCircle('circle3', "#e03070", Math.PI * 5 / 2,false)
+        this.drawCircle('circle3', "#e03070", Math.PI * 5 / 2, false)
         break
     }
   },
-
-  showModal: function () {
-    // 显示遮罩层  
-    let that = this;
-    var animation = wx.createAnimation({
-      duration: 200,
-      timingFunction: "linear",
-      delay: 0
-    })
-    that.animation = animation
-    animation.translateY(animationShowHeight).step()
-    that.setData({
-      "cardDetail.animationData": animation.export(),
-      "cardDetail.showModalStatus": true
-    });
-
-    setTimeout(function () {
-      animation.translateY(0).step()
-      this.setData({
-        "cardDetail.animationData": animation.export()
-      })
-    }.bind(that), 200);
+  onShow: function (e) {
+    app.onShowPopup(e);
   },
-  hideModal: function () {
-    // 隐藏遮罩层  
-    var animation = wx.createAnimation({
-      duration: 200,
-      timingFunction: "linear",
-      delay: 0
-    })
-    this.animation = animation;
-    animation.translateY(animationShowHeight).step()
-    this.setData({
-      "cardDetail.animationData": animation.export(),
-    })
-    setTimeout(function () {
-      animation.translateY(0).step()
-      this.setData({
-        "cardDetail.animationData": animation.export(),
-        "cardDetail.showModalStatus": false
-      })
-    }.bind(this), 200)
+  showModal: function (e) {
+    app.showComplexModal();
   },
-  onShow: function () {
-    let that = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        animationShowHeight = res.windowHeight;
-        animationShowWidth = res.windowWidth;
-      }
-    })
+  hideModal: function (e) {
+    app.hideComplexModal();
   },
-
-  tapUserInfo: function(e){
+  tapUserInfo: function (e) {
     wx.navigateTo({
       url: '../userInfo/userInfo',
     })

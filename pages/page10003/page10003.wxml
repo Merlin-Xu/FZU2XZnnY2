@@ -1,5 +1,5 @@
 <import src='../../utils/popUpCard.wxml' />
-<template is="popup" data="{{cardDetail:cardDetail}}"></template>
+<template is="popup" data="{{cardDetail:popupDetails}}"></template>
 <import src='../../utils/tab.wxml' />
 <import src='../../utils/grid_icon.wxml' />
 <view>
