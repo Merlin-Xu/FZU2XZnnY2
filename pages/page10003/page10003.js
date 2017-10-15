@@ -132,23 +132,23 @@ var pageData = {
     var context = wx.createCanvasContext(id)
     context.setStrokeStyle(color);
     context.setLineWidth(4);
-    context.arc(75, 75, 73, Math.PI / 2, arc, end);
+    context.arc(100, 100, 90, Math.PI / 2, arc, end);
     context.setStrokeStyle(color);
     context.stroke();
     if(end){
       context.beginPath();
       context.setStrokeStyle(color);
       context.setLineWidth(4);
-      context.arc(75, 75, 70, Math.PI / 2, Math.PI * 3 / 2);
+      context.arc(100, 100, 90, Math.PI / 2, Math.PI * 3 / 2);
       context.setStrokeStyle("gray");
       context.stroke();
       // context.beginPath()
-      // context.arc(75, 0, 10, 0, 0 * Math.PI)
+      // context.arc(100, 0, 10, 0, 0 * Math.PI)
       // context.setFillStyle(color)
       // context.fill();
       context.beginPath()
-      context.arc(75, 5, 10, 0, 2 * Math.PI)
-      context.setFillStyle('red')
+      context.arc(100, 10, 5, 0, 2 * Math.PI)
+      context.setFillStyle(color);
       context.fill()
     }
     context.draw();

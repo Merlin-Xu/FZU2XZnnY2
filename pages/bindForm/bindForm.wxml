@@ -13,9 +13,9 @@
     </view>
     <view class="radio">
       <radio-group class="radio-group" bindchange="radioChange">
-        <view class="radio" wx:for="{{itemsArr}}">
-          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
-        </view>
+        <label class="radio" wx:for="{{itemsArr}}">
+          <radio value="{{item.name}}" style='transform:scale(.8)' checked="{{item.checked}}" />{{item.value}}
+        </label>
       </radio-group>
     </view>
     <view class="verify-row" wx:if="{{!showPhone}}">
@@ -44,19 +44,19 @@
       <span wx:if="{{newCodeBtnDisabled}}">已向您的手机发送一次性验证码,</span>请在下方输入验证码完成验证：</label>
     <view class="page bindPhone-wrap" id="bindPhonePage" data-router="bindPhonePage">
       <view class="bind-new-tel-wrap">
-        <view class="verify-row disable" style="border-bottom: none;">
+        <view class="verify-row {{showPhone?'disable':''}}" style="border-bottom: none;">
           <label class="item-name">手机号</label>
-          <input class="code-tel" value='{{verifyPhone}}' disabled/>
+          <input class="code-tel" value='{{verifyPhone}}' bindinput="inputPhone" disabled="{{showPhone}}" />
         </view>
         <view class="verify-row">
           <label class="item-name code">验证码</label>
           <input class="new-code" bindinput="inputNewCode" placeholder="验证码" />
           <label class="get-code-btn" bindtap="sendCodeToNewPhone">{{ newCodeStatus }} </label>
         </view>
-        <view class="linkCnt" bindtap="backStep">
+        <view class="linkCnt" bindtap="backStep" data-param="phone">
           <div class="text-style">更换手机登记</div>
         </view>
-        <view class="linkCnt second" bindtap="backStep">
+        <view class="linkCnt second" bindtap="backStep" data-param="email">
           <div class="text-style">更换邮箱登记</div>
         </view>
         <view class='tab-group'>

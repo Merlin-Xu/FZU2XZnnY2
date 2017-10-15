@@ -199,3 +199,6 @@ page {
   left: 20px;
   color: #222;
 }
+.radio{
+  margin: 10px 6px;
+}

@@ -13,7 +13,7 @@ Page({
       { name: 'email', value: '邮箱' },
       { name: 'phone', value: '手机号', checked: 'true' }
     ],
-    showPhone:true,
+    showPhone: true,
     newCodeBtnDisabled: false,
     newCodeStatus: '获取验证码',
     bindNewPhoneBtnDisabled: false,
@@ -21,10 +21,26 @@ Page({
   },
   radioChange: function (e) {
     console.log(e.detail.value);
-    if(e.detail.value=="phone")
-      this.setData({ showPhone:true})
-    else
-      this.setData({ showPhone: true })
+    if (e.detail.value == "phone") {
+      this.setData({ showPhone: true });
+      this.setData({
+        itemsArr: [{ name: 'email', value: '邮箱' },
+        { name: 'phone', value: '手机号', checked: 'true' }]
+      });
+    } else {
+      this.setData({ showPhone: false });
+      this.setData({
+        itemsArr: [{ name: 'email', value: '邮箱', checked: 'true' },
+        { name: 'phone', value: '手机号' }]
+      });
+    }
+
+    // var items = this.data.itemsArr;
+    // for (var i = 0, len = items.length; i < len; ++i) {
+    //   items[i].checked = items[i].value == e.detail.value
+    // }
+
+
   },
   onLoad: function (options) {
     var userInfo = app.getUserInfo();
@@ -140,15 +156,13 @@ Page({
   },
   nextStep: function (e) {
     console.log("binding");
-    this.setData({
-      step: 2
-    });
-    return;
     var that = this,
       verifyPhone = this.data.verifyPhone,
       verifyEmail = this.data.verifyEmail,
       vipCardNo = this.data.vipCardNo,
-      lastName = this.data.lastName;
+      lastName = this.data.lastName,
+      showPhone = this.data.showPhone;
+    console.log(verifyPhone + "|" + verifyEmail + "|" + showPhone);
     if ((!verifyPhone && !verifyEmail) || !vipCardNo) {
       app.showModal({
         content: '请填写完整的信息'
@@ -161,13 +175,13 @@ Page({
       });
       return;
     }
-    if (verifyPhone && !util.isPhoneNumber(verifyPhone)) {
+    if (showPhone && verifyPhone == "" && !util.isPhoneNumber(verifyPhone)) {
       app.showModal({
         content: '请输入正确的手机号码'
       })
       return;
     }
-    if (verifyEmail && !util.isEmail(verifyEmail)) {
+    if (!showPhone && verifyEmail == "" && !util.isEmail(verifyEmail)) {
       app.showModal({
         content: '请输入正确的邮箱'
       })
@@ -235,11 +249,12 @@ Page({
       }
     })
   },
-  backStep: function (e) {
-    console.log('backstep');
+  backStep: function (event) {
+    var dataset = event.currentTarget.dataset,
+      router = dataset.router;
     this.setData({
       step: 1
-    })
+    });
   },
   viewCard: function (e) {
     app.reLaunch({ url: '../page10003/page10003' });
