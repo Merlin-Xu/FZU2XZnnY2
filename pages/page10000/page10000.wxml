@@ -21,7 +21,7 @@
   </view>
 
   <view style='background-color: #fff; padding: 20px 0px 20px 0px; display: flex; flex-direction: row'>
-    <template is='grid-icon' data="{{end:false,url:'../../image/gift.svg`', title:'会员奖赏', width:'33%'}}" />
+    <template is='grid-icon' data="{{end:false,url:'../../image/gift.svg', title:'会员奖赏', width:'33%'}}" />
     <template is='grid-icon' data="{{end:false,url:'../../image/shopping.svg', title:'线上购物', width:'33%'}}" />
     <template is='grid-icon' data="{{end:true,url:'../../image/contact.svg', title:'联系客服', width:'33%'}}" />
   </view>
