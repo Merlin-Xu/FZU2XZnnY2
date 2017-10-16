@@ -189,7 +189,21 @@ Page({
     }
     this.setData({
       step: 2
-    })
+    });
+    var data = app.getUserInfo();
+    data.phone = verifyPhone;
+    data.email = verifyEmail;
+    app.sendRequest({
+      url: '/index.php?r=AppData/saveUserInfo',
+      method: 'post',
+      data: data,
+      success: function (res) {
+        if (res.status === 0) {
+          app.setUserInfoStorage(data);
+          // app.turnBack();
+        }
+      }
+    });
   },
   sendCodeToNewPhone: function () {
     var that = this,

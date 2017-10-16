@@ -11,7 +11,8 @@
   background-image: url(http://img.weiye.me/zcimgdir/album/file_59e3573997f27.png);
   background-size: 100%;
 }
-.swiper-block{
+
+.swiper-block {
   background: rgba(0, 0, 0, 0.8);
 }
 
@@ -23,6 +24,32 @@
 .circle-count {
   font-size: 24px;
 }
-.displayNone{
+
+.displayNone {
   display: none;
+}
+
+.containerCircle {
+  background: transparent;
+  border: 5px solid #00b0b0;
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+}
+
+.circle1 {
+  border: 5px solid #00b0b0;
+}
+
+.circle2 {
+  transform: rotate(45deg);
+  border: 5px solid #f0c050;
+  border-left: 5px solid gray;
+  border-bottom: 5px solid gray;
+  border-right: 5px solid #f0c050;
+  border-radius: 200px;
+}
+
+.circle3 {
+  border: 5px solid #e03070;
 }
