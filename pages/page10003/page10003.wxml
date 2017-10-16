@@ -35,7 +35,7 @@
     </view>
 
     <view class='grid-row'>
-      <template is='grid-icon' data="{{end:false,url:'../../image/gift.svg', title:'会员奖赏', width:'50%',userCenterTurnToPage:'userCenterTurnToPage',router:'vipCard'}}" />
+      <template is='grid-icon' data="{{end:false,url:'../../image/gift.svg', title:'会员奖赏', width:'50%'}}" />
       <template is='grid-icon' data="{{end:true,url:'../../image/order.svg', title:'购物记录', width:'50%'}}" />
     </view>
   </view>
@@ -43,7 +43,7 @@
 
 <view style='position: fixed; top: 0px; display: flex; flex-direction: row; padding: 10px'>
   <image style='width: 24px; height: 24px; padding-right: 5px' src="../../image/user_circle.png"></image>
-  <text style='color:#fff; font-size: 16px; border-bottom: 1px solid #fff;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:200rpx;'>{{userName}}</text>
+  <text style='color:#fff; font-size: 16px; border-bottom: 1px solid #fff;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:200rpx;' bindtap='tapUserInfo'>{{userName}}</text>
 </view>
 
 <view style='position: fixed; top: 0px; right: 0px; display: flex; flex-direction: column; padding: 10px; text-align: center'>

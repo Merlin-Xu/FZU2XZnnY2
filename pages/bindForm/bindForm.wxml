@@ -27,8 +27,8 @@
       <input class="code-tel" value='{{verifyPhone}}' bindinput="inputPhone" placeholder="已登记的手机号" />
     </view>
     <view class="verify-row" style="border-bottom: none;">
-      <label class="item-name">姓名</label>
-      <input class="input" bindinput="inputLastName" value="{{lastName}}" placeholder="您的姓名"></input>
+      <label class="item-name">姓氏</label>
+      <input class="input" bindinput="inputLastName" value="{{lastName}}" placeholder="您的姓氏"></input>
     </view>
 
     <view class='tab-group'>

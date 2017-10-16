@@ -8,7 +8,7 @@
         <view class="title">{{ cardDetail.appName }}</view>
         <view class="level">{{ cardDetail.level }}</view>
         <view class="cardno">{{ cardDetail.cardNo }}</view>
-        <view class="duration">{{ cardDetail.duration }}</view>
+        <view class="duration"></view>
       </view>
     </view>
      </navigator> 

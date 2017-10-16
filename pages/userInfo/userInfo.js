@@ -98,7 +98,7 @@ Page({
       that.setData({
         'gender': userInfo.sex == 0 ? '男' : userInfo.sex == 1 ? '女' : '未知',
         'country': userInfo.country,
-        'addr': userInfo.country + ',' + userInfo.province + ',' + userInfo.city
+        'addr': userInfo.country
       });
     }
   },

@@ -133,9 +133,7 @@ var pageData = {
     });
   },
   tabhome: function (e) {
-    wx.navigateBack({
-      delta: 10,
-    })
+    app.reLaunch({ url: '../page10000/page10000' });
   },
 
   drawCircle: function (id, color, arc, end) {
