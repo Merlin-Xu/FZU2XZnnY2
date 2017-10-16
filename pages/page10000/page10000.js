@@ -17,12 +17,17 @@ Page({
     }
   },
   onLoad: function (e) {
-    if (!app.isLogin()) {
-      app.goLogin({
-        success: function () {
-          // app.turnToPage('/pages/userCenter/userCenter?from=userCenterEle');
-        }
-      });
+    var phone = app.getUserInfo().phone;
+    if (!phone) {
+      if (!app.isLogin()) {
+        app.goLogin({
+          success: function () {
+            app.turnToPage('/pages/userCenter/userCenter?from=userCenterEle');
+          }
+        });
+      } else {
+
+      }
     }
   },
   userCenterTurnToPage: function (e) {
