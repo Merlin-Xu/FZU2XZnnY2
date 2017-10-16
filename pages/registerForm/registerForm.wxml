@@ -6,12 +6,12 @@
     <view class="page bindPhone-wrap" id="bindPhonePage" data-router="bindPhonePage">
       <view class="bind-new-tel-wrap">
         <view class="verify-row" style="border-bottom: none;">
-          <label class="item-name name">姓名</label>
-          <input class="name" bindinput="inputName" placeholder="请输入姓名" />
+          <label class="item-name name">姓氏</label>
+          <input class="name" bindinput="inputName" placeholder="请输入姓氏" />
         </view>
         <view class="verify-row" style="border-bottom: none;">
           <label class="item-name name">国家</label>
-          <input class="name" bindinput="inputName" placeholder="请填写居住国家" />
+          <input class="name" bindinput="inputCountry" placeholder="请填写居住国家" />
         </view>
         <view class="verify-row" style="border-bottom: none;">
           <label class="item-name name">性别</label>
@@ -23,7 +23,7 @@
         </view>
         <view class="verify-row">
           <label class="item-name name">邮箱</label>
-          <input class="name" bindinput="inputName" placeholder="请填写Email" />
+          <input class="name" bindinput="inputEmail" placeholder="请填写Email" />
         </view>
         <view class="verify-row" style="border-bottom: none;">
           <label class="item-name">手机号 +86</label>
@@ -69,15 +69,15 @@
       <view class="bind-new-tel-wrap">
         <view class="verify-row selectBox" style="border-bottom: none;display:block;">
           <label class="item-name preferred">品牌偏好</label>
-          <picker bindchange="bindBrandChange" value="{{brandSelected}}" range="{{storeArr}}">
+          <picker bindchange="bindBrandChange" value="{{brandSelected}}" range="{{brandArr}}">
             <view class="picker">
-              {{storeArr[brandSelected]}}
+              {{brandArr[brandSelected]}}
             </view>
           </picker>
         </view>
         <view class="verify-row selectBox">
           <label class="item-name preferred">门店偏好</label>
-          <picker bindchange="bindStoreChange" value="{{storeSelected}}" range="{{brandArr}}">
+          <picker bindchange="bindStoreChange" value="{{storeSelected}}" range="{{storeArr}}">
             <view class="picker">
               {{brandArr[storeSelected]}}
             </view>

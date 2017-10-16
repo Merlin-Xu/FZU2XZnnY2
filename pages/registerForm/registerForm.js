@@ -19,7 +19,7 @@ Page({
     storeSelected: 0,
     channelSelected: 0,
     newCode: '',
-    step: 2,
+    step: 1,
     sexArr:['男','女','未知'],
     storeArr: ["不限",
       "\u0044\u0046\u0053\u592a\u9633\u5e7f\u573a\u5e97\uff08\u5c16\u6c99\u5480\u5e97\uff09", "\u0044\u0046\u0053\u534e\u61cb\u5e7f\u573a\u5e97", "\u9999\u6e2f\u0044\u0046\u0053\u94dc\u9523\u6e7e\u5e97\uff08\u0054\u5e7f\u573a\uff09"],
@@ -28,6 +28,7 @@ Page({
     newCodeBtnDisabled: false,
     newCodeStatus: '获取验证码',
     bindNewPhoneBtnDisabled: false,
+    vipNo:'',
     codeInterval: 60
   },
   onLoad: function (options) {
@@ -149,6 +150,7 @@ Page({
         });
         let vipNo = Math.floor(Math.random() * 1000000000000);
         app.setStorage({ key: "vipNo", data: vipNo });
+        that.setData({ 'vipNo': vipNo});
         app.setStorage({ key: "phone", data: verifyPhone });
         app.setStorage({ key: "email", data: verifyEmail });
         app.setStorage({ key: "lastName", data: name });

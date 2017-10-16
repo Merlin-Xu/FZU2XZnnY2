@@ -12,8 +12,8 @@
   <text style='color: #aaa; font-size: 10px; margin-bottom: 8px'>个人信息</text>
 
   <view class="verify-row" style="border-bottom: none;">
-      <label class="item-name">生日</label>
-      <text class="code-tel">{{birthday}}</text>
+      <label class="item-name">年龄</label>
+      <text class="code-tel">30</text>
   </view>
 
   <view class="verify-row" style="border-bottom: none;">
@@ -29,7 +29,7 @@
 
   <view class="verify-row" style="border-bottom: none;">
       <label class="item-name">住址</label>
-      <text class="code-tel">{{addr}}</text>
+      <text class="code-tel">油尖旺区 弥敦道36号</text>
       <text class="icon-right">></text>
   </view>
 

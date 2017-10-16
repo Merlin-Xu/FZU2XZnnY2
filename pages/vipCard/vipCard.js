@@ -105,7 +105,7 @@ Page({
     if (userInfo) {
       that.setData({
         'cardOwner.sex': userInfo.sex == 0 ? '男' : userInfo.sex == 1 ? '女' : '未知',
-        'cardOwner.address': userInfo.country + ',' + userInfo.province + ',' + userInfo.city,
+        'cardOwner.address': "油尖旺区 弥敦道36号",
         'cardOwner.nickName': userInfo.nickname
       });
     }
